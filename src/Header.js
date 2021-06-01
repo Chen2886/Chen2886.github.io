@@ -11,19 +11,29 @@ function networks() {}
 function Description() {
   var arr = ['Software Engineer', 'Researcher', 'Gamer'];
   arr = arr.sort(() => Math.random() - 0.5);
+  // var element = [];
+  // arr.forEach((str) => {
+  //   // element.push(<Typing.Backspace count={1}></Typing.Backspace>);
+  //   element.push(<span>{str}</span>);
+  //   element.push(<Typing.Backspace count={str.length + 1} delay={1000}></Typing.Backspace>);
+  // });
   return (
-    <Typing loop speed={50}>
+    <div style={{ width: '100%' }}>
       <h3>
-        {arr.map((item, i) => (
-          <div key={i}>
-            {item}
-            <Typing.Speed ms={35} />
-            <Typing.Backspace count={18} delay={2000} />
-            <Typing.Speed ms={50} />
+        <Typing loop>
+          <div>
+            {arr.map((item) => (
+              <>
+                <span>{item}</span>
+                <Typing.Speed ms={35} />
+                <Typing.Backspace count={item.length + 1} delay={2000} />
+                <Typing.Speed ms={50} />
+              </>
+            ))}
           </div>
-        ))}
+        </Typing>
       </h3>
-    </Typing>
+    </div>
   );
 }
 
@@ -128,7 +138,7 @@ export default function Header() {
       <NavBar>
         <Nav>
           {/* Pending Logo */}
-          <div>abcasdfkljal;sdf</div>
+          <div>Logo Replacement</div>
           <Links>
             <ol>
               <li>
@@ -139,7 +149,7 @@ export default function Header() {
               </li>
               <li>
                 <a className='smoothscroll' href='#resume'>
-                  Resume
+                  Experience
                 </a>
               </li>
               <li>

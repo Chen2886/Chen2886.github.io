@@ -53,17 +53,51 @@ a:focus {
 
 /* Hi line */
 #home .banner-text h1 {
-  font: 90px/1.1em;
+  font-size: 90px;
   color: #fff;
   margin: 0 auto 18px auto;
+  letter-spacing: 1px;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* typing */
 #home .banner-text h3 {
-  font: 18px/1.9em;
+  font-size: 18px;
   color: #fff;
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#home .banner-text hr {
+  width: 60%;
+  margin: 18px auto 24px auto;
+  border-color: #2f2d2e;
+  border-color: rgba(150, 150, 150, 0.1);
+}
+
+#home .social {
+  margin: 50px 24px;
+  padding: 0;
+  font-size: 30px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#home .social li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+
+#home .social li a {
+  color: #fff;
+}
+
+#home .social li a:hover {
+  color: #11abb0;
+}
+
+#about {
+  height: calc(100vh - 100px);
+  padding-top: 100px;
 }

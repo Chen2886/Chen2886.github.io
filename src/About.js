@@ -1,5 +1,4 @@
 import React from 'react';
-import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Grid, Hidden } from '@material-ui/core';
 
