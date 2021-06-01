@@ -11,22 +11,21 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import styled, { css } from 'styled-components';
 
 function App() {
+  const StyledContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  `;
   library.add(fab, faUser, faAddressCard, faEnvelope, faPhoneSquare);
   return (
     <div className='App'>
-      <AppBar position='fixed'>
-        <Toolbar>
-          <IconButton edge='start' color='inherit' aria-label='menu'>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6'>News</Typography>
-          <Button color='inherit'>Login</Button>
-        </Toolbar>
-      </AppBar>
-      <Header></Header>
-      <About></About>
+      <StyledContent>
+        <Header></Header>
+        <About></About>
+      </StyledContent>
     </div>
   );
 }

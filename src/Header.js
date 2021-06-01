@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Grid, Hidden } from '@material-ui/core';
+import styled, { css } from 'styled-components';
 
 // import Nav from './Nav'
 
@@ -26,61 +27,154 @@ function Description() {
   );
 }
 
-class Header extends Component {
-  handleScroll() {
-    let scrollTop = window.pageYOffset;
-    const e = document.getElementById('nav-wrap');
-    console.log(e.scrollHeight);
-    const bottom = e.scrollHeight - e.scrollTop === e.clientHeight;
-    console.log(bottom);
-    // if (wrappedElement.getBoundingClientRect().bottom <= window.innerHeight) {
-    //   console.log('header bottom reached');
-    // }
+const NavBar = styled.header`
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  padding: 0px 50px;
+  background-color: rgba(10, 25, 47, 0.85);
 
-    // this.setState({
-    //   transform: itemTranslate
-    // });
+  z-index: 11;
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  @media (max-width: 1080px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 25px;
+  }
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  color: #ccd6f6;
+  counter-reset: item 0;
+  z-index: 12;
+`;
+
+const Links = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 768px) {
+    display: none;
   }
 
-  componentDidMount() {
-    // window.addEventListener('scroll', this.handleScroll);
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin: 0 5px;
+      position: relative;
+      font-size: 13px;
+      float: left;
+
+      a {
+        padding: 10px;
+
+        &:before {
+          margin-right: 5px;
+          color: #64ffda;
+          font-size: 12px;
+          text-align: right;
+        }
+      }
+    }
   }
 
-  componentWillUnmount() {
-    // window.removeEventListener('scroll', this.handleScroll);
+  .resume-button {
+    margin-left: 15px;
+    font-size: 13px;
   }
+`;
 
-  social = [
-    {
-      name: 'mail',
-      url: 'mailto: chen2886@purdue.edu',
-      className: 'fas envelope',
-    },
-    {
-      name: 'linkedin',
-      url: 'https://www.linkedin.com/in/tonychen47/',
-      className: 'fab linkedin',
-    },
-    {
-      name: 'github',
-      url: 'http://github.com/Chen2886',
-      className: 'fab github-square',
-    },
-  ];
+const social = [
+  {
+    name: 'mail',
+    url: 'mailto: chen2886@purdue.edu',
+    icon: 'fas envelope',
+  },
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/tonychen47/',
+    icon: 'fab linkedin',
+  },
+  {
+    name: 'github',
+    url: 'http://github.com/Chen2886',
+    icon: 'fab github-square',
+  },
+];
 
-  render() {
-    return (
+export default function Header() {
+  return (
+    <>
+      {/* Header */}
+      <NavBar>
+        <Nav>
+          {/* Pending Logo */}
+          <div>abcasdfkljal;sdf</div>
+          <Links>
+            <ol>
+              <li>
+                <a href='#home'>Home</a>
+              </li>
+              <li>
+                <a href='#about'>About</a>
+              </li>
+              <li>
+                <a className='smoothscroll' href='#resume'>
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a className='smoothscroll' href='#portfolio'>
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a className='smoothscroll' href='#contact'>
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href='https://drive.google.com/file/d/14Nupb9SvA5LyGL-Xim8aMUYpDO2EsH5_/view?usp=sharing'
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  Resume
+                </a>
+              </li>
+            </ol>
+          </Links>
+        </Nav>
+      </NavBar>
       <div id='home'>
         <div className='row banner'>
           <div className='banner-text'>
             <h1 className='responsive-headline'>Hi, I'm Tony!</h1>
             <Description></Description>
             <ul className='social'>
-              {this.social.map(function (network) {
+              {social.map(function (network) {
                 return (
                   <li key={network.name}>
                     <a href={network.url}>
-                      <FontAwesomeIcon icon={[network.className.split(' ')[0], network.className.split(' ')[1]]} />
+                      <FontAwesomeIcon icon={[network.icon.split(' ')[0], network.icon.split(' ')[1]]} />
                     </a>
                   </li>
                 );
@@ -94,8 +188,6 @@ class Header extends Component {
           </a>
         </p>
       </div>
-    );
-  }
+    </>
+  );
 }
-
-export default Header;
