@@ -45,7 +45,7 @@ const NavBar = styled.header`
         height: 70px;
         transform: translateY(0px);
         background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
       `};
 
     ${(props) =>
@@ -208,7 +208,6 @@ export default function Header() {
               <Typing onFinishedTyping={updateDisplayedInfo} loop>
                 {typingElement}
               </Typing>
-              {/* Software Engineer | Researcher | Gamer */}
             </h3>
             <ul className='social'>
               {social.map(function (network) {

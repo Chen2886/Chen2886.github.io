@@ -1,9 +1,9 @@
 /* import google font */
-@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 .App {
   /* background-color: ; */
-  font-family: 'Audiowide', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* global styles */
@@ -13,7 +13,7 @@ a {
   text-decoration-skip-ink: auto;
   color: inherit;
   position: relative;
-  transition: var(--transition);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 a:hover,
@@ -103,14 +103,14 @@ a:focus {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 100px 50px;
+  padding: 70px 50px;
   height: 100vh;
   position: relative;
   width: 100%;
   background-color: rgb(35, 37, 39);
   /* background-size: cover !important; */
   /* -webkit-background-size: cover !important; */
-  text-align: center;
+  /* text-align: center; */
   overflow: hidden;
   vertical-align: middle;
 }
@@ -120,4 +120,26 @@ a:focus {
   width: 120px;
   height: 120px;
   border-radius: 100%;
+}
+
+#about h2 {
+  font-size: 22px;
+  color: #eee;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+#about td {
+  line-height: 30px;
+  color: #eee;
+}
+
+#about p {
+  line-height: 30px;
+  color: #eee;
+}
+
+#about li {
+  color: #eee;
+  line-height: 30px;
 }
