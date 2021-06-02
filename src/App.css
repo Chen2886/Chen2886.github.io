@@ -99,28 +99,36 @@ a:focus {
 
 /* about section */
 #about {
-  /* height: calc(100vh - 100px); */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
   padding: 70px 50px;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+
   position: relative;
   width: 100%;
   background-color: rgb(35, 37, 39);
-  /* background-size: cover !important; */
-  /* -webkit-background-size: cover !important; */
-  /* text-align: center; */
-  overflow: hidden;
   vertical-align: middle;
-  display: flex;
   justify-content: center;
+  align-items: stretch;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+#about .about-grid {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  vertical-align: middle;
 }
 
 #about .profile-pic {
   /* position: relative; */
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
