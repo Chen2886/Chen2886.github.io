@@ -11,7 +11,7 @@ function networks() {}
 
 function Description() {}
 
-const NavBar = styled.header`
+const NavBar = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

@@ -113,13 +113,18 @@ a:focus {
   /* text-align: center; */
   overflow: hidden;
   vertical-align: middle;
+  display: flex;
+  justify-content: center;
 }
 
 #about .profile-pic {
-  position: relative;
-  width: 120px;
-  height: 120px;
+  /* position: relative; */
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #about h2 {
