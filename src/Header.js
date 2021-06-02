@@ -1,6 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import useScrollDirection from './UseScrollDirection';
 import { Grid, Hidden } from '@material-ui/core';
 import styled, { css } from 'styled-components';
 
@@ -8,34 +9,7 @@ import styled, { css } from 'styled-components';
 
 function networks() {}
 
-function Description() {
-  var arr = ['Software Engineer', 'Researcher', 'Gamer'];
-  arr = arr.sort(() => Math.random() - 0.5);
-  // var element = [];
-  // arr.forEach((str) => {
-  //   // element.push(<Typing.Backspace count={1}></Typing.Backspace>);
-  //   element.push(<span>{str}</span>);
-  //   element.push(<Typing.Backspace count={str.length + 1} delay={1000}></Typing.Backspace>);
-  // });
-  return (
-    <div style={{ width: '100%' }}>
-      <h3>
-        <Typing loop>
-          <div>
-            {arr.map((item) => (
-              <>
-                <span>{item}</span>
-                <Typing.Speed ms={35} />
-                <Typing.Backspace count={item.length + 1} delay={2000} />
-                <Typing.Speed ms={50} />
-              </>
-            ))}
-          </div>
-        </Typing>
-      </h3>
-    </div>
-  );
-}
+function Description() {}
 
 const NavBar = styled.header`
   -webkit-box-sizing: border-box;
@@ -61,6 +35,27 @@ const NavBar = styled.header`
   }
   @media (max-width: 768px) {
     padding: 0 25px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ${(props) =>
+      props.scrollDirection === 'up' &&
+      !props.scrolledToTop &&
+      css`
+        height: 70px;
+        transform: translateY(0px);
+        background-color: rgba(10, 25, 47, 0.85);
+        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      `};
+
+    ${(props) =>
+      props.scrollDirection === 'down' &&
+      !props.scrolledToTop &&
+      css`
+        height: 70px;
+        transform: translateY(calc(70px * -1));
+        box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+      `};
   }
 `;
 
@@ -132,10 +127,41 @@ const social = [
 ];
 
 export default function Header() {
+  const scrollDirection = useScrollDirection('down');
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const [arrIndex, setArrIndex] = useState(0);
+  const [typingElement, setTypingElement] = useState(' ');
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  var descriptionArr = ['Software Engineer', 'Researcher', 'Gamer'];
+
+  const updateDisplayedInfo = () => {
+    if (arrIndex === descriptionArr.length - 1) setArrIndex(0);
+    else setArrIndex(arrIndex + 1);
+
+    setTypingElement(
+      <>
+        <span>{descriptionArr[arrIndex]}</span>
+        <Typing.Backspace count={descriptionArr[arrIndex].length + 1} delay={2000} />
+      </>
+    );
+  };
+
   return (
     <>
       {/* Header */}
-      <NavBar>
+      <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav>
           {/* Pending Logo */}
           <div>Logo Replacement</div>
@@ -178,7 +204,12 @@ export default function Header() {
         <div className='row banner'>
           <div className='banner-text'>
             <h1 className='responsive-headline'>Hi, I'm Tony!</h1>
-            <Description></Description>
+            <h3>
+              <Typing onFinishedTyping={updateDisplayedInfo} loop>
+                {typingElement}
+              </Typing>
+              {/* Software Engineer | Researcher | Gamer */}
+            </h3>
             <ul className='social'>
               {social.map(function (network) {
                 return (
