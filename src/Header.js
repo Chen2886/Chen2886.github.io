@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useScrollDirection from './UseScrollDirection';
 import { Grid, Hidden } from '@material-ui/core';
 import styled, { css } from 'styled-components';
+import Particles from 'react-tsparticles';
+import backgroundJson from './background.json';
 
 // import Nav from './Nav'
 
@@ -158,8 +160,18 @@ export default function Header() {
     );
   };
 
+  const particlesInit = (main) => {
+    console.log(main);
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+  };
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
   return (
     <>
+      <Particles options={backgroundJson} style={{ zIndex: -1 }} />
       {/* Header */}
       <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav>

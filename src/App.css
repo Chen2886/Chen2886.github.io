@@ -26,7 +26,7 @@ a:focus {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: rgb(35, 37, 39);
+  /* background-color: rgb(35, 37, 39); */
   background-size: cover !important;
   -webkit-background-size: cover !important;
   text-align: center;
@@ -98,31 +98,25 @@ a:focus {
 }
 
 /* about section */
-#about {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  padding: 70px 50px;
-  min-height: 100vh;
-  height: 100%;
-
-  position: relative;
-  width: 100%;
-  background-color: rgb(35, 37, 39);
-  vertical-align: middle;
-  justify-content: center;
-  align-items: stretch;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  display: flex;
-}
 
 #about .about-grid {
   width: 90%;
   margin: auto;
   height: 100%;
   vertical-align: middle;
+  outline: 1px solid white;
+  outline-offset: 100px;
+}
+
+@media only screen and (max-width: 650px) {
+  #about .about-grid {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    vertical-align: middle;
+    outline: none;
+    
+  }
 }
 
 #about .profile-pic {

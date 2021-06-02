@@ -18,11 +18,39 @@ const RightColumnDiv = styled.div`
   box-sizing: border-box;
 `;
 
+const StyledUl = styled.ul`
+  padding-left: 8px;
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+  } ;
+`;
+
+const StyledAboutDiv = styled.div`
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  padding: 70px 50px;
+  min-height: 100vh;
+  height: 100%;
+
+  position: relative;
+  width: 100%;
+  background-color: rgb(35, 37, 39);
+  vertical-align: middle;
+  justify-content: center;
+  align-items: stretch;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  display: flex;
+`;
+
 const ProgressBarDiv = styled.div``;
 
 export default function About() {
   return (
-    <div id='about'>
+    <StyledAboutDiv id='about'>
       <Grid className='about-grid' container justify='center' alignItems='center'>
         <Hidden mdUp>
           <Grid item sm={12} md={6} style={{ height: '100%', width: '100%' }}>
@@ -100,13 +128,13 @@ export default function About() {
             <h2>Fun Facts</h2>
           </Hidden>
           <div>
-            <ul>
+            <StyledUl>
               <li>In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!</li>
               <li>I've passed the written exam for a private pilot license.</li>
               <li>Skydiving and participating in professional karting are at the top of my bucket list.</li>
               <li>My summer of 2019, I visited the White House and toured the press conference room!</li>
               <li>My newest hobby is going to Topgolf!</li>
-            </ul>
+            </StyledUl>
           </div>
           <br />
         </Grid>
@@ -375,6 +403,6 @@ export default function About() {
           <br />
         </Grid>
       </Grid> */}
-    </div>
+    </StyledAboutDiv>
   );
 }
