@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Grid, Hidden } from '@material-ui/core';
+import { Grid, Hidden, useTheme } from '@material-ui/core';
 import styled from 'styled-components';
-import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const RightColumnDiv = styled.div`
   width: 100%;
@@ -12,7 +13,6 @@ const RightColumnDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  // padding: 3rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -31,7 +31,7 @@ const StyledAboutDiv = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  padding: 70px 50px;
+  padding: 25px 0px;
   min-height: 100vh;
   height: 100%;
 
@@ -46,73 +46,140 @@ const StyledAboutDiv = styled.div`
   display: flex;
 `;
 
-const ProgressBarDiv = styled.div``;
+const ProgressBarDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #eee;
+  width: 100%;
+  height: 100%;
+`;
+
+const skill = [
+  {
+    name: 'Java',
+    level: '85',
+  },
+  {
+    name: 'C',
+    level: '90',
+  },
+  {
+    name: 'SQL',
+    level: '80',
+  },
+  {
+    name: 'React Js',
+    level: '92',
+  },
+  {
+    name: 'Python',
+    level: '83',
+  },
+  {
+    name: 'Swift',
+    level: '77',
+  },
+  {
+    name: 'AngularJs',
+    level: '60',
+  },
+  {
+    name: 'JS',
+    level: '75',
+  },
+];
 
 export default function About() {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <StyledAboutDiv id='about'>
-      <Grid className='about-grid' container justify='center' alignItems='center'>
-        <Hidden mdUp>
-          <Grid item sm={12} md={6} style={{ height: '100%', width: '100%' }}>
+      <Grid className='about-grid' container justify='center' alignItems='center' spacing={isMd ? 3 : 8}>
+        <Hidden lgUp>
+          <Grid item md={12} lg={6} style={{ height: '100%', width: '100%' }}>
             <RightColumnDiv>
-              <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
-              <div>
-                <table style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '2rem' }}>
-                  <tbody>
-                    <tr>
-                      <th colSpan='3'>
-                        <div style={{ textAlign: 'center' }}>
-                          <h2>Contact Details</h2>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className='white'>
-                        <FontAwesomeIcon icon='user' />
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                      <td>Nuo (Tony) Chen</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <FontAwesomeIcon icon='envelope' />
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                      <td>chen2886@purdue.edu</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <FontAwesomeIcon icon='phone-square' />
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                      <td>352-274-1888</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <FontAwesomeIcon icon='address-card' />
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                      <td>
-                        1250 1st Street, Room 190
-                        <br />
-                        West Lafayette, IN, 47906
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
+              <Grid container style={{ width: '100%' }} justify='center' alignItems='center' spacing={8}>
+                <Grid item md={6} lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
+                  <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
+                </Grid>
+                <Grid item md={6} lg={12}>
+                  <div>
+                    <table style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '2rem' }}>
+                      <tbody>
+                        <tr>
+                          <th colSpan='3'>
+                            <div style={{ textAlign: 'center' }}>
+                              <h2>Contact Details</h2>
+                            </div>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td className='white'>
+                            <FontAwesomeIcon icon='user' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>Nuo (Tony) Chen</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='envelope' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>chen2886@purdue.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='phone-square' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>352-274-1888</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='address-card' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>
+                            1250 1st Street, Room 190
+                            <br />
+                            West Lafayette, IN, 47906
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </Grid>
+              </Grid>
+
+              <Grid container justify='center' alignItems='center' spacing={5}>
+                {skill.map((item, i) => {
+                  return (
+                    <Grid item md={3} sm={4} xs={6} key={i}>
+                      <ProgressBarDiv>
+                        <CircularProgressbarWithChildren
+                          value={item.level}
+                          styles={buildStyles({
+                            strokeLinecap: 'butt',
+                          })}>
+                          <ProgressBarDiv>
+                            {item.name}
+                            <br />
+                            {item.level}%
+                          </ProgressBarDiv>
+                        </CircularProgressbarWithChildren>
+                      </ProgressBarDiv>
+                    </Grid>
+                  );
+                })}
+              </Grid>
             </RightColumnDiv>
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={5}>
-          <Hidden mdUp>
-            <div style={{ marginTop: '5rem' }}></div>
-            <h2>About Me</h2>
-          </Hidden>
-          <Hidden smDown>
-            <h2>About Me</h2>
-          </Hidden>
+        <Grid item md={12} lg={6}>
+          <h2>About Me</h2>
           <p>
             I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I
             specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS
@@ -138,9 +205,8 @@ export default function About() {
           </div>
           <br />
         </Grid>
-        <Hidden smDown>
-          <Grid item md={2}></Grid>
-          <Grid item sm={12} md={5} style={{ height: '100%', width: '100%' }}>
+        <Hidden mdDown>
+          <Grid item md={12} lg={6} style={{ height: '100%', width: '100%' }}>
             <RightColumnDiv>
               <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
               <div>
@@ -187,95 +253,26 @@ export default function About() {
                   </tbody>
                 </table>
               </div>
-              <Grid container container justify='center' alignItems='center' spacing={5}>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
-                <Grid item xs={3}>
-                  <ProgressBarDiv>
-                    <CircularProgressbar
-                      value={60}
-                      text={'60%'}
-                      styles={buildStyles({
-                        strokeLinecap: 'butt',
-                      })}
-                    />
-                  </ProgressBarDiv>
-                </Grid>
+              <Grid container justify='center' alignItems='center' spacing={5}>
+                {skill.map((item, i) => {
+                  return (
+                    <Grid item xs={3} key={i}>
+                      <ProgressBarDiv>
+                        <CircularProgressbarWithChildren
+                          value={item.level}
+                          styles={buildStyles({
+                            strokeLinecap: 'butt',
+                          })}>
+                          <ProgressBarDiv>
+                            {item.name}
+                            <br />
+                            {item.level}%
+                          </ProgressBarDiv>
+                        </CircularProgressbarWithChildren>
+                      </ProgressBarDiv>
+                    </Grid>
+                  );
+                })}
               </Grid>
             </RightColumnDiv>
           </Grid>

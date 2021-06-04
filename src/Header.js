@@ -1,17 +1,11 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useScrollDirection from './UseScrollDirection';
-import { Grid, Hidden } from '@material-ui/core';
 import styled, { css } from 'styled-components';
 import Particles from 'react-tsparticles';
 import backgroundJson from './background.json';
-
-// import Nav from './Nav'
-
-function networks() {}
-
-function Description() {}
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const NavBar = styled.div`
   -webkit-box-sizing: border-box;
@@ -84,6 +78,9 @@ const Links = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     li {
       margin: 0 5px;
@@ -108,6 +105,18 @@ const Links = styled.div`
     margin-left: 15px;
     font-size: 13px;
   }
+`;
+
+const StyledResumeButton = styled.a`
+  background-color: transparent;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 12px;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const social = [
@@ -160,15 +169,6 @@ export default function Header() {
     );
   };
 
-  const particlesInit = (main) => {
-    console.log(main);
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     <>
       <Particles options={backgroundJson} style={{ zIndex: -1 }} />
@@ -186,27 +186,23 @@ export default function Header() {
                 <a href='#about'>About</a>
               </li>
               <li>
-                <a className='smoothscroll' href='#resume'>
-                  Experience
-                </a>
+                <a href='#experience'>Experience</a>
               </li>
               <li>
-                <a className='smoothscroll' href='#portfolio'>
-                  Projects
-                </a>
+                <a href='#portfolio'>Projects</a>
               </li>
               <li>
-                <a className='smoothscroll' href='#contact'>
-                  Contact
-                </a>
+                <a href='#contact'>Contact</a>
               </li>
               <li>
-                <a
+                <StyledResumeButton
+                  style={{ padding: '8px' }}
                   href='https://drive.google.com/file/d/14Nupb9SvA5LyGL-Xim8aMUYpDO2EsH5_/view?usp=sharing'
                   target='_blank'
                   rel='noopener noreferrer'>
-                  Resume
-                </a>
+                  <GetAppIcon></GetAppIcon>
+                  <div style={{ marginLeft: '8px' }}>Resume</div>
+                </StyledResumeButton>
               </li>
             </ol>
           </Links>
@@ -235,7 +231,7 @@ export default function Header() {
           </div>
         </div>
         <p className='scrolldown'>
-          <a className='smoothscroll' href='#about'>
+          <a href='#about'>
             <i className='icon-down-circle'></i>
           </a>
         </p>

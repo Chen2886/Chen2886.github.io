@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Header';
 import About from './About';
+import Experience from './Experience';
 import { faUser, faAddressCard, faEnvelope, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -19,6 +20,7 @@ function App() {
       <StyledContent>
         <Header></Header>
         <About></About>
+        <Experience></Experience>
       </StyledContent>
     </div>
   );
