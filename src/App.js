@@ -6,6 +6,8 @@ import { faUser, faAddressCard, faEnvelope, faPhoneSquare } from '@fortawesome/f
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
+import Particles from 'react-tsparticles';
+import backgroundJson from './background.json';
 
 function App() {
   const StyledContent = styled.div`
@@ -17,7 +19,8 @@ function App() {
   library.add(fab, faUser, faAddressCard, faEnvelope, faPhoneSquare);
   return (
     <div className='App'>
-      <StyledContent>
+      <Particles options={backgroundJson} style={{ zIndex: -1 }} />
+      <StyledContent id='content'>
         <Header></Header>
         <About></About>
         <Experience></Experience>

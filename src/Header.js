@@ -6,6 +6,8 @@ import styled, { css } from 'styled-components';
 import Particles from 'react-tsparticles';
 import backgroundJson from './background.json';
 import GetAppIcon from '@material-ui/icons/GetApp';
+import NavMenu from './NavMenu';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 const NavBar = styled.div`
   -webkit-box-sizing: border-box;
@@ -100,11 +102,6 @@ const Links = styled.div`
       }
     }
   }
-
-  .resume-button {
-    margin-left: 15px;
-    font-size: 13px;
-  }
 `;
 
 const StyledResumeButton = styled.a`
@@ -171,7 +168,6 @@ export default function Header() {
 
   return (
     <>
-      <Particles options={backgroundJson} style={{ zIndex: -1 }} />
       {/* Header */}
       <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav>
@@ -206,6 +202,7 @@ export default function Header() {
               </li>
             </ol>
           </Links>
+          <NavMenu />
         </Nav>
       </NavBar>
       <div id='home'>
