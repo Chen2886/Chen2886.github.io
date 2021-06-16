@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Card, Typography, Paper, Hidden } from '@material-ui/core';
+import { Grid, Card, Typography, Paper, Hidden, GridList } from '@material-ui/core';
 import {
   Timeline,
   TimelineItem,
@@ -14,6 +14,8 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import HotelIcon from '@material-ui/icons/Hotel';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { faDivide } from '@fortawesome/free-solid-svg-icons';
 
 const StyledExperienceDiv = styled.div`
   -webkit-box-sizing: border-box;
@@ -32,10 +34,33 @@ const StyledExperienceDiv = styled.div`
   align-items: stretch;
   flex-grow: 1;
   flex-wrap: wrap;
-  display: flex;
 `;
 
-const StyledTimelineDiv = styled.div`
+const LgUpWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+`;
+
+const LgUpCard = styled.div`
+  color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  width: 30%;
+`;
+
+const MdDownWrapper = styled.div`
+  display: flex;
+  padding: 20px;
+  width: 100%;
+`;
+
+const MdDownCard = styled.div`
   color: white;
   border: 1px solid white;
   border-radius: 25px;
@@ -65,12 +90,33 @@ const experience = [
     description:
       'I have been a Teaching Assistant since my sophomore year. It is my favorite time and always the highlight of my week. I was a TA for 2 semesters for CS 240 (Programming in C) and have been a TA for CS 251 (Data Structures and Algorithms) since then. I led two labs each week to help students further their understanding by practicing what they learned in class or explain concepts in more detail for students who struggled in class. I also hold office hours which allows more one-on-one interaction with students who need guidance on homework and projects.',
   },
+  {
+    company: 'Purdue University',
+    title: 'Teaching Assistant ',
+    years: 'August 2019 - Current',
+    description:
+      'I have been a Teaching Assistant since my sophomore year. It is my favorite time and always the highlight of my week. I was a TA for 2 semesters for CS 240 (Programming in C) and have been a TA for CS 251 (Data Structures and Algorithms) since then. I led two labs each week to help students further their understanding by practicing what they learned in class or explain concepts in more detail for students who struggled in class. I also hold office hours which allows more one-on-one interaction with students who need guidance on homework and projects.',
+  },
+  {
+    company: 'Purdue University',
+    title: 'Teaching Assistant ',
+    years: 'August 2019 - Current',
+    description:
+      'Iis my favorite time and always th for CS 240 (Programming in C) and have been a TA for CS 251 (Data Structures and Algorithms) since then. I led two labs each week to help students further their understanding by practicing what they learned in class or explain concepts in more detail for students who struggled in class. I also hold office hours which allows more one-on-one interaction with students who need guidance on homework and projects.',
+  },
+  {
+    company: 'Purdue University',
+    title: 'Teaching Assistant ',
+    years: 'August 2019 - Current',
+    description:
+      'Iis my favorite time and always th for CS 240 (Programming in C) and have been a TA for CS 251 (Data Structures and Algorithms) since then. I led two labs each week to help students further their understanding by practicing what they learned in class or explain concepts in more detail for students who struggled in class. I also hold office hours which allows more one-on-one interaction with students who need guidance on homework and projects.',
+  },
 ];
 
 export default function Experience() {
   return (
     <StyledExperienceDiv id='experience'>
-      <Grid className='experience-grid' container justify='center' alignItems='center'>
+      {/* <Grid className='experience-grid' container alignItems='stretch' spacing='5' direction='row'>
         <Grid item xs={12}>
           <h2>My Journey</h2>
         </Grid>
@@ -87,12 +133,14 @@ export default function Experience() {
                     }>
                     <h4>{item.years}</h4>
                   </TimelineOppositeContent>
+
                   <TimelineSeparator>
                     <TimelineDot>
                       <FastfoodIcon />
                     </TimelineDot>
-                    <TimelineConnector />
+                    {i !== experience.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
+
                   <TimelineContent>
                     <StyledTimelineDiv>
                       <h3>{item.title}</h3>
@@ -107,20 +155,64 @@ export default function Experience() {
           </Grid>
         </Hidden>
         <Hidden mdUp>
-          {experience.map((item, i) => (
-            <Grid item md={12} key={i} style={{ margin: '1rem 0px' }}>
-              <StyledTimelineDiv>
+        <StyledCardDiv>
+        {experience.map((item, i) => (
+          <Grid item md={12} lg={4} key={i} style={{ height: '100%' }}>
+            <StyledTimelineDiv>
+              <h3>{item.title}</h3>
+              <h5>
+                {item.company} &bull; {item.years}
+              </h5>
+              <hr />
+              <h5>{item.description}</h5>
+            </StyledTimelineDiv>
+          </Grid>
+        ))}
+        </StyledCardDiv>
+        </Hidden>
+      </Grid> */}
+      {/* <div className='experience-grid'>
+        <Hidden lgUp>
+          <LgUpWrapper>
+            {experience.map((item, i) => (
+              <LgUpCard key={i}>
                 <h3>{item.title}</h3>
                 <h5>
                   {item.company} &bull; {item.years}
                 </h5>
                 <hr />
                 <h5>{item.description}</h5>
-              </StyledTimelineDiv>
-            </Grid>
-          ))}
+              </LgUpCard>
+            ))}
+          </LgUpWrapper>
         </Hidden>
-      </Grid>
+        <Hidden mdDown>
+          <MdDownWrapper>
+            {experience.map((item, i) => (
+              <MdDownCard key={i}>
+                <h3>{item.title}</h3>
+                <h5>
+                  {item.company} &bull; {item.years}
+                </h5>
+                <hr />
+                <h5>{item.description}</h5>
+              </MdDownCard>
+            ))}
+          </MdDownWrapper>
+        </Hidden>
+      </div> */}
+      <GridList cols={3}>
+        {experience.map((item, i) => (
+          <MdDownCard key={i}>
+            <h3>{item.title}</h3>
+            <h5>
+              {item.company} &bull; {item.years}
+            </h5>
+            <hr />
+            <h5>{item.description}</h5>
+          </MdDownCard>
+        ))}
+      </GridList>
     </StyledExperienceDiv>
   );
 }
