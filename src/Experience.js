@@ -173,14 +173,17 @@ const CustomTab = withStyles((theme) => ({
   root: {
     textTransform: 'none',
     color: '#fff',
-    fontWeight: theme.typography.fontWeightRegular,
-    fontSize: theme.typography.pxToRem(15),
-    // marginRight: theme.spacing(1),
-    marginLeft: '0px',
-    marginRight: 'auto',
+    alignItems: 'center',
+    fontSize: '15px',
     '&:focus': {
       opacity: 1,
     },
+  },
+  wrapper: {
+    alignItems: 'flex-start',
+  },
+  selected: {
+    color: '#64ffda',
   },
 }))((props) => <Tab disableRipple {...props} />);
 
