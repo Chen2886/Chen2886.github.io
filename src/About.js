@@ -19,10 +19,10 @@ const RightColumnDiv = styled.div`
 `;
 
 const StyledUl = styled.ul`
-  padding-left: 8px;
+  margin-top: 3px;
 
-  @media (max-width: 650px) {
-    padding-left: 0;
+  @media (max-width: 600px) {
+    padding-left: 12px;
   } ;
 `;
 
@@ -99,87 +99,6 @@ export default function About() {
   return (
     <StyledAboutDiv id='about'>
       <Grid className='about-grid' container justify='center' alignItems='center' spacing={isMd ? 3 : 8}>
-        <Hidden lgUp>
-          <Grid item md={12} lg={6} style={{ height: '100%', width: '100%' }}>
-            <RightColumnDiv>
-              <Grid container style={{ width: '100%' }} justify='center' alignItems='center' spacing={8}>
-                <Grid item md={6} lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
-                  <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
-                </Grid>
-                <Grid item md={6} lg={12}>
-                  <div>
-                    <table style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '2rem' }}>
-                      <tbody>
-                        <tr>
-                          <th colSpan='3'>
-                            <div style={{ textAlign: 'center' }}>
-                              <h2>Contact Details</h2>
-                            </div>
-                          </th>
-                        </tr>
-                        <tr>
-                          <td className='white'>
-                            <FontAwesomeIcon icon='user' />
-                          </td>
-                          <td>&nbsp;&nbsp;</td>
-                          <td>Nuo (Tony) Chen</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <FontAwesomeIcon icon='envelope' />
-                          </td>
-                          <td>&nbsp;&nbsp;</td>
-                          <td>chen2886@purdue.edu</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <FontAwesomeIcon icon='phone-square' />
-                          </td>
-                          <td>&nbsp;&nbsp;</td>
-                          <td>352-274-1888</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <FontAwesomeIcon icon='address-card' />
-                          </td>
-                          <td>&nbsp;&nbsp;</td>
-                          <td>
-                            1250 1st Street, Room 190
-                            <br />
-                            West Lafayette, IN, 47906
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </Grid>
-              </Grid>
-
-              <Grid container justify='center' alignItems='center' spacing={5}>
-                {skill.map((item, i) => {
-                  return (
-                    <Grid item md={3} sm={4} xs={6} key={i}>
-                      <ProgressBarDiv>
-                        <CircularProgressbarWithChildren
-                          value={item.level}
-                          styles={buildStyles({
-                            strokeLinecap: 'butt',
-                            pathColor: '#fcdb81'
-                          })}>
-                          <ProgressBarDiv>
-                            {item.name}
-                            <br />
-                            {item.level}%
-                          </ProgressBarDiv>
-                        </CircularProgressbarWithChildren>
-                      </ProgressBarDiv>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </RightColumnDiv>
-          </Grid>
-        </Hidden>
         <Grid item md={12} lg={6}>
           <h2>About Me</h2>
           <p>
@@ -187,16 +106,9 @@ export default function About() {
             specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS
             comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I
             also enjoy the problem solving aspect of programming and the ability to express my creativity.
-          </p>
-          <Hidden mdUp>
-            <div style={{ marginTop: '5rem' }}></div>
-            <h2>Fun Facts</h2>
-          </Hidden>
-          <Hidden smDown>
-            <div style={{ marginTop: '5rem' }}></div>
-            <h2>Fun Facts</h2>
-          </Hidden>
-          <div>
+            <br />
+            <br />
+            Here are some fun facts about me:
             <StyledUl>
               <li>In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!</li>
               <li>I've passed the written exam for a private pilot license.</li>
@@ -204,7 +116,16 @@ export default function About() {
               <li>My summer of 2019, I visited the White House and toured the press conference room!</li>
               <li>My newest hobby is going to Topgolf!</li>
             </StyledUl>
-          </div>
+          </p>
+          {/* <Hidden mdUp>
+            <div style={{ marginTop: '5rem' }}></div>
+            <h2>Fun Facts</h2>
+          </Hidden>
+          <Hidden smDown>
+            <div style={{ marginTop: '5rem' }}></div>
+            <h2>Fun Facts</h2>
+          </Hidden> */}
+
           <br />
         </Grid>
         <Hidden mdDown>
@@ -214,13 +135,13 @@ export default function About() {
               <div>
                 <table style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '2rem', marginTop: '2rem' }}>
                   <tbody>
-                    <tr>
+                    {/* <tr>
                       <th colSpan='9'>
                         <div style={{ textAlign: 'center' }}>
                           <h2>Contact Details</h2>
                         </div>
                       </th>
-                    </tr>
+                    </tr> */}
                     <tr>
                       <td className='white'>
                         <FontAwesomeIcon icon='user' />
@@ -264,7 +185,88 @@ export default function About() {
                           value={item.level}
                           styles={buildStyles({
                             strokeLinecap: 'butt',
-                            pathColor: '#fcdb81'
+                            pathColor: '#fcdb81',
+                          })}>
+                          <ProgressBarDiv>
+                            {item.name}
+                            <br />
+                            {item.level}%
+                          </ProgressBarDiv>
+                        </CircularProgressbarWithChildren>
+                      </ProgressBarDiv>
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </RightColumnDiv>
+          </Grid>
+        </Hidden>
+        <Hidden lgUp>
+          <Grid item md={12} lg={6} style={{ height: '100%', width: '100%' }}>
+            <RightColumnDiv>
+              <Grid container style={{ width: '100%' }} justify='center' alignItems='center' spacing={8}>
+                <Grid item md={6} lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
+                  <img className='profile-pic' src='images/profilepic.jpg' alt='Profile Pic' />
+                </Grid>
+                <Grid item md={6} lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex' }}>
+                    <table style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                      <tbody>
+                        {/* <tr>
+                          <th colSpan='3'>
+                            <div style={{ textAlign: 'center' }}>
+                              <h2>Contact Details</h2>
+                            </div>
+                          </th>
+                        </tr> */}
+                        <tr>
+                          <td className='white'>
+                            <FontAwesomeIcon icon='user' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>Nuo (Tony) Chen</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='envelope' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>chen2886@purdue.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='phone-square' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>352-274-1888</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FontAwesomeIcon icon='address-card' />
+                          </td>
+                          <td>&nbsp;&nbsp;</td>
+                          <td>
+                            1250 1st Street, Room 190
+                            <br />
+                            West Lafayette, IN, 47906
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </Grid>
+              </Grid>
+
+              <Grid container justify='center' alignItems='center' spacing={5} style={{ marginTop: '8px' }}>
+                {skill.map((item, i) => {
+                  return (
+                    <Grid item md={3} sm={4} xs={6} key={i}>
+                      <ProgressBarDiv>
+                        <CircularProgressbarWithChildren
+                          value={item.level}
+                          styles={buildStyles({
+                            strokeLinecap: 'butt',
+                            pathColor: '#fcdb81',
                           })}>
                           <ProgressBarDiv>
                             {item.name}
