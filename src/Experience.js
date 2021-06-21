@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Card, Tab, Tabs, withStyles, CardContent, Grid } from '@material-ui/core';
+import { Card, Tab, Tabs, withStyles, CardContent, Grid, useTheme } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const StyledExperienceDiv = styled.div`
   -webkit-box-sizing: border-box;
@@ -9,9 +10,9 @@ const StyledExperienceDiv = styled.div`
 
   padding: 25px 0px;
   height: 100%;
+  min-height: 80vh;
 
   background-color: rgb(35, 37, 39);
-  display: flex;
 `;
 
 const StyledInnerDiv = styled.div`
@@ -77,8 +78,8 @@ const CustomCard = withStyles(() => ({
 
 function TabPanel(props) {
   return (
-    <CustomCard hidden={props.value !== props.index} style={{ width: '100%', marginLeft: '16px' }} elevation={0}>
-      <CardContent style={{ paddingTop: '0' }}>
+    <CustomCard hidden={props.value !== props.index} style={{ width: '100%', marginLeft: props.isMd ? '0px' : '16px' }} elevation={0}>
+      <CardContent style={{ padding: '0' }}>
         <h3 style={{ marginTop: '0', textAlign: 'left' }}>
           {experience[props.index].title} @ {experience[props.index].company}
         </h3>
@@ -124,6 +125,8 @@ const CustomTabs = withStyles({
 
 export default function Experience() {
   const [activeTabId, setActiveTabId] = useState(0);
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleChange = (event, newValue) => {
     setActiveTabId(newValue);
@@ -131,23 +134,28 @@ export default function Experience() {
 
   return (
     <StyledExperienceDiv id='experience'>
-      <Grid className='experience-grid' container justify='center' alignItems='center' spacing={3}>
+      <Grid className='experience-grid' container justify='center' alignItems='flex-start' spacing={3}>
         <Grid item xs={12}>
           {/* <StyledTitleDiv> */}
-          <h2 style={{ margin: 0 }}>My Experience</h2>
+          <h2 style={{ margin: 0 }}>Experience</h2>
           <hr></hr>
           {/* </StyledTitleDiv> */}
         </Grid>
         <Grid item xs={12}>
-          <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center' }}>
-            <CustomTabs orientation='vertical' value={activeTabId} onChange={handleChange}>
+          <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center', flexDirection: isMd ? 'column' : 'row' }}>
+            <CustomTabs
+              variant={isMd ? 'scrollable' : 'standard'}
+              orientation={isMd ? 'horizontal' : 'vertical'}
+              isMd={isMd}
+              value={activeTabId}
+              onChange={handleChange}>
               {experience.map(function (item) {
                 return <CustomTab label={item.listTitle}></CustomTab>;
               })}
             </CustomTabs>
-            <div style={{ width: '50%' }}>
+            <div style={{ width: isMd ? '100%' : '50%' }}>
               {experience.map(function (item, i) {
-                return <TabPanel value={activeTabId} index={i} />;
+                return <TabPanel value={activeTabId} index={i} isMd={isMd} />;
               })}
             </div>
           </div>

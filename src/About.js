@@ -215,13 +215,13 @@ export default function About() {
                   <div style={{ display: 'flex' }}>
                     <table style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                       <tbody>
-                        {/* <tr>
-                          <th colSpan='3'>
+                        <tr>
+                          <th colSpan='9'>
                             <div style={{ textAlign: 'center' }}>
-                              <h2>Contact Details</h2>
+                              <h2>Detail</h2>
                             </div>
                           </th>
-                        </tr> */}
+                        </tr>
                         <tr>
                           <td className='white'>
                             <FontAwesomeIcon icon='user' />
