@@ -25,21 +25,23 @@ const StyledExperienceDiv = styled.div`
   padding: 25px 0px;
   min-height: 100vh;
   height: 100%;
-  padding-top: 25%;
 
+  background-color: rgb(35, 37, 39);
+  display: flex;
+`;
+
+const StyledInnerDiv = styled.div`
+  padding: 50px;
+  padding-top: 15vh;
   position: relative;
   width: 100%;
-  background-color: rgb(35, 37, 39);
-  vertical-align: middle;
+
   justify-content: center;
   align-items: flex-start;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   flex-wrap: wrap;
-`;
-
-const StyledCardH1 = styled.h1`
-  color: #fff;
 `;
 
 const experience = [
@@ -79,11 +81,11 @@ function TabPanel(props) {
   return (
     <CustomCard hidden={props.value !== props.index} style={{ width: '100%', marginLeft: '16px' }} elevation={0}>
       <CardContent style={{ paddingTop: '0' }}>
-        <StyledCardH1 style={{ marginTop: '0' }}>
+        <h3 style={{ marginTop: '0', textAlign: 'left' }}>
           {experience[props.index].title} @ {experience[props.index].company}
-        </StyledCardH1>
+        </h3>
         <h4>{experience[props.index].years}</h4>
-        <h4>{experience[props.index].description}</h4>
+        <p>{experience[props.index].description}</p>
       </CardContent>
     </CustomCard>
   );
@@ -101,6 +103,7 @@ const CustomTab = withStyles(() => ({
   },
   wrapper: {
     alignItems: 'flex-start',
+    fontFamily: "'Raleway', sans-serif",
   },
   selected: {
     color: '#64ffda',
@@ -130,20 +133,21 @@ export default function Experience() {
 
   return (
     <StyledExperienceDiv id='experience'>
-      <CustomTabs orientation='vertical' value={activeTabId} onChange={handleChange}>
-        {experience.map(function (item) {
-          return <CustomTab label={item.listTitle}></CustomTab>;
-        })}
-      </CustomTabs>
-      <div style={{ width: '50%' }}>
-        {experience.map(function (item, i) {
-          return (
-            <TabPanel value={activeTabId} index={i}>
-              Item One
-            </TabPanel>
-          );
-        })}
-      </div>
+      <StyledInnerDiv>
+        <h2 style={{ display: 'flex', width: '100%', justifyContent: 'center', marginBottom: '2em' }}>My Experience</h2>
+        <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center' }}>
+          <CustomTabs orientation='vertical' value={activeTabId} onChange={handleChange}>
+            {experience.map(function (item) {
+              return <CustomTab label={item.listTitle}></CustomTab>;
+            })}
+          </CustomTabs>
+          <div style={{ width: '50%' }}>
+            {experience.map(function (item, i) {
+              return <TabPanel value={activeTabId} index={i} />;
+            })}
+          </div>
+        </div>
+      </StyledInnerDiv>
     </StyledExperienceDiv>
   );
 }

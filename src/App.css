@@ -23,6 +23,27 @@ button:focus {
   color: #64ffda;
 }
 
+p {
+  line-height: 30px;
+  color: #eee;
+}
+
+h2 {
+  font-size: 35px;
+  /* color: #eee; */
+  color: #fcdb81;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 25px;
+  /* color: #eee; */
+  color: #fcdb81;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
 /* landing page style */
 #home {
   position: relative;
@@ -140,20 +161,7 @@ button:focus {
   align-items: center;
 }
 
-#about h2 {
-  font-size: 30px;
-  /* color: #eee; */
-  color: #fcdb81;
-  margin-bottom: 12px;
-  text-align: center;
-}
-
 #about td {
-  line-height: 30px;
-  color: #eee;
-}
-
-#about p {
   line-height: 30px;
   color: #eee;
 }
@@ -199,11 +207,4 @@ button:focus {
 #experience h5 {
   color: #eee;
   line-height: 20px;
-}
-
-#experience h2 {
-  font-size: 30px;
-  color: #eee;
-  margin-bottom: 12px;
-  text-align: center;
 }
