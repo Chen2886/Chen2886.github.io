@@ -32,7 +32,6 @@ const StyledAboutDiv = styled.div`
   box-sizing: border-box;
 
   padding: 25px 0px;
-  min-height: 100vh;
   height: 100%;
 
   position: relative;
@@ -98,15 +97,19 @@ export default function About() {
 
   return (
     <StyledAboutDiv id='about'>
-      <Grid className='about-grid' container justify='center' alignItems='center' spacing={isMd ? 3 : 8}>
+      <Grid className='about-grid' container justify='center' alignItems='center' spacing={3}>
+        <Grid item xs={12}>
+          <h2 style={{ margin: 0 }}>Profile</h2>
+          <hr />
+        </Grid>
         <Grid item md={12} lg={6}>
-          <h2>About Me</h2>
+          <h3>About me</h3>
           <p>
             I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I
             specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS
             comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I
             also enjoy the problem solving aspect of programming and the ability to express my creativity.
-            <br />
+            {/* <br />
             <br />
             Here are some fun facts about me:
             <StyledUl>
@@ -115,7 +118,7 @@ export default function About() {
               <li>Skydiving and participating in professional karting are at the top of my bucket list.</li>
               <li>My summer of 2019, I visited the White House and toured the press conference room!</li>
               <li>My newest hobby is going to Topgolf!</li>
-            </StyledUl>
+            </StyledUl> */}
           </p>
           {/* <Hidden mdUp>
             <div style={{ marginTop: '5rem' }}></div>
@@ -135,13 +138,13 @@ export default function About() {
               <div>
                 <table style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '2rem', marginTop: '2rem' }}>
                   <tbody>
-                    {/* <tr>
+                    <tr>
                       <th colSpan='9'>
                         <div style={{ textAlign: 'center' }}>
-                          <h2>Contact Details</h2>
+                          <h2>Detail</h2>
                         </div>
                       </th>
-                    </tr> */}
+                    </tr>
                     <tr>
                       <td className='white'>
                         <FontAwesomeIcon icon='user' />
@@ -176,7 +179,7 @@ export default function About() {
                   </tbody>
                 </table>
               </div>
-              <Grid container justify='center' alignItems='center' spacing={5}>
+              {/* <Grid container justify='center' alignItems='center' spacing={5}>
                 {skill.map((item, i) => {
                   return (
                     <Grid item xs={3} key={i}>
@@ -197,7 +200,7 @@ export default function About() {
                     </Grid>
                   );
                 })}
-              </Grid>
+              </Grid> */}
             </RightColumnDiv>
           </Grid>
         </Hidden>
@@ -257,7 +260,7 @@ export default function About() {
                 </Grid>
               </Grid>
 
-              <Grid container justify='center' alignItems='center' spacing={5} style={{ marginTop: '8px' }}>
+              {/* <Grid hidden container justify='center' alignItems='center' spacing={5} style={{ marginTop: '8px' }}>
                 {skill.map((item, i) => {
                   return (
                     <Grid item md={3} sm={4} xs={6} key={i}>
@@ -278,7 +281,7 @@ export default function About() {
                     </Grid>
                   );
                 })}
-              </Grid>
+              </Grid> */}
             </RightColumnDiv>
           </Grid>
         </Hidden>

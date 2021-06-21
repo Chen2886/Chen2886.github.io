@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Grid, Card, Typography, Paper, Hidden, GridList, Tab, Tabs, withStyles, CardContent, CardActions, Button } from '@material-ui/core';
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineContent,
-  TimelineOppositeContent,
-  TimelineDot,
-} from '@material-ui/lab';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import HotelIcon from '@material-ui/icons/Hotel';
-import RepeatIcon from '@material-ui/icons/Repeat';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-import { faDivide } from '@fortawesome/free-solid-svg-icons';
+import { Card, Tab, Tabs, withStyles, CardContent, Grid } from '@material-ui/core';
 
 const StyledExperienceDiv = styled.div`
   -webkit-box-sizing: border-box;
@@ -23,7 +8,6 @@ const StyledExperienceDiv = styled.div`
   box-sizing: border-box;
 
   padding: 25px 0px;
-  min-height: 100vh;
   height: 100%;
 
   background-color: rgb(35, 37, 39);
@@ -31,8 +15,10 @@ const StyledExperienceDiv = styled.div`
 `;
 
 const StyledInnerDiv = styled.div`
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 50px;
-  padding-top: 15vh;
   position: relative;
   width: 100%;
 
@@ -42,6 +28,18 @@ const StyledInnerDiv = styled.div`
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: wrap;
+`;
+
+const StyledTitleDiv = styled.div`
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2em;
+  padding: 12px;
+  flex-direction: column;
 `;
 
 const experience = [
@@ -133,21 +131,29 @@ export default function Experience() {
 
   return (
     <StyledExperienceDiv id='experience'>
-      <StyledInnerDiv>
-        <h2 style={{ display: 'flex', width: '100%', justifyContent: 'center', marginBottom: '2em' }}>My Experience</h2>
-        <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center' }}>
-          <CustomTabs orientation='vertical' value={activeTabId} onChange={handleChange}>
-            {experience.map(function (item) {
-              return <CustomTab label={item.listTitle}></CustomTab>;
-            })}
-          </CustomTabs>
-          <div style={{ width: '50%' }}>
-            {experience.map(function (item, i) {
-              return <TabPanel value={activeTabId} index={i} />;
-            })}
+      <Grid className='experience-grid' container justify='center' alignItems='center' spacing={3}>
+        <Grid item xs={12}>
+          {/* <StyledTitleDiv> */}
+          <h2 style={{ margin: 0 }}>My Experience</h2>
+          <hr></hr>
+          {/* </StyledTitleDiv> */}
+        </Grid>
+        <Grid item xs={12}>
+          <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center' }}>
+            <CustomTabs orientation='vertical' value={activeTabId} onChange={handleChange}>
+              {experience.map(function (item) {
+                return <CustomTab label={item.listTitle}></CustomTab>;
+              })}
+            </CustomTabs>
+            <div style={{ width: '50%' }}>
+              {experience.map(function (item, i) {
+                return <TabPanel value={activeTabId} index={i} />;
+              })}
+            </div>
           </div>
-        </div>
-      </StyledInnerDiv>
+        </Grid>
+      </Grid>
+      {/* </StyledInnerDiv> */}
     </StyledExperienceDiv>
   );
 }
