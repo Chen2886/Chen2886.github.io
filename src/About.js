@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Grid, Hidden, useTheme } from '@material-ui/core';
 import styled from 'styled-components';
-import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -45,51 +44,6 @@ const StyledAboutDiv = styled.div`
   flex-wrap: wrap;
   display: flex;
 `;
-
-const ProgressBarDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #eee;
-  width: 100%;
-  height: 100%;
-`;
-
-const skill = [
-  {
-    name: 'Java',
-    level: '85',
-  },
-  {
-    name: 'C',
-    level: '90',
-  },
-  {
-    name: 'SQL',
-    level: '80',
-  },
-  {
-    name: 'React Js',
-    level: '92',
-  },
-  {
-    name: 'Python',
-    level: '83',
-  },
-  {
-    name: 'Swift',
-    level: '77',
-  },
-  {
-    name: 'AngularJs',
-    level: '60',
-  },
-  {
-    name: 'JS',
-    level: '75',
-  },
-];
 
 export default function About() {
   const theme = useTheme();

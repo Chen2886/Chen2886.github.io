@@ -2,7 +2,8 @@ import './App.css';
 import Header from './Header';
 import About from './About';
 import Experience from './Experience';
-import Project from './Project'
+import Project from './Project';
+import Skill from './Skills';
 import { faUser, faAddressCard, faEnvelope, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -22,10 +23,11 @@ function App() {
     <div className='App'>
       <Particles options={backgroundJson} style={{ zIndex: -1 }} />
       <StyledContent id='content'>
-        <Header></Header>
-        <About></About>
-        <Experience></Experience>
-        <Project></Project>
+        <Header />
+        <About />
+        <Experience />
+        <Skill />
+        <Project />
       </StyledContent>
     </div>
   );
