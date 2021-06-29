@@ -10,37 +10,9 @@ const StyledExperienceDiv = styled.div`
 
   padding: 25px 0px;
   height: 100%;
-  min-height: 80vh;
+  min-height: 65vh;
 
   background-color: rgb(35, 37, 39);
-`;
-
-const StyledInnerDiv = styled.div`
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 50px;
-  position: relative;
-  width: 100%;
-
-  justify-content: center;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-wrap: wrap;
-`;
-
-const StyledTitleDiv = styled.div`
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 2em;
-  padding: 12px;
-  flex-direction: column;
 `;
 
 const experience = [
@@ -78,7 +50,10 @@ const CustomCard = withStyles(() => ({
 
 function TabPanel(props) {
   return (
-    <CustomCard hidden={props.value !== props.index} style={{ width: '100%', marginLeft: props.isMd ? '0px' : '16px' }} elevation={0}>
+    <CustomCard
+      hidden={props.value !== props.index}
+      style={{ width: '100%', marginLeft: props.isMd ? '0px' : '16px', marginTop: props.isMd ? '16px' : '0px' }}
+      elevation={0}>
       <CardContent style={{ padding: '0' }}>
         <h3 style={{ marginTop: '0', textAlign: 'left' }}>
           {experience[props.index].title} @ {experience[props.index].company}
@@ -90,7 +65,7 @@ function TabPanel(props) {
   );
 }
 
-const CustomTab = withStyles(() => ({
+const CustomTab = withStyles((props) => ({
   root: {
     textTransform: 'none',
     color: '#fff',
@@ -104,12 +79,20 @@ const CustomTab = withStyles(() => ({
     alignItems: 'flex-start',
     fontFamily: "'Raleway', sans-serif",
   },
+  '@media (max-width: 1280px)': {
+    wrapper: {
+      alignItems: 'center',
+    },
+  },
   selected: {
     color: '#64ffda',
   },
 }))((props) => <Tab disableRipple {...props} />);
 
 const CustomTabs = withStyles({
+  flexContainer: {
+    justifyContent: 'center',
+  },
   indicator: {
     display: 'flex',
     justifyContent: 'center',
