@@ -35,8 +35,7 @@ const StyledAboutDiv = styled.div`
 
   position: relative;
   width: 100%;
-  /* background-color: rgb(35, 37, 39); */
-  background-color: #3d3620;
+  background-color: rgb(35, 37, 39);
   vertical-align: middle;
   justify-content: center;
   align-items: stretch;
