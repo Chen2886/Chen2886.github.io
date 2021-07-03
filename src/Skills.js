@@ -72,7 +72,7 @@ export default function Skill() {
         <Grid container justify='center' alignItems='center' spacing={5}>
           {skill.map((item, i) => {
             return (
-              <Grid item xs={3} sm={2} key={i}>
+              <Grid item xs={5} sm={3} md={2} key={i}>
                 <ProgressBarDiv>
                   <CircularProgressbarWithChildren
                     value={item.level}
