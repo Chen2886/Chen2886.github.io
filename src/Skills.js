@@ -65,9 +65,11 @@ export default function Skill() {
   return (
     <StyledSkillDiv id='experience'>
       <Grid className='experience-grid' container justify='center' alignItems='flex-start' spacing={3}>
-        <Grid item xs={12}>
-          <h2 style={{ margin: 0 }}>Skills</h2>
-          <hr></hr>
+        <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
+          <div style={{ display: 'inline-block' }}>
+            <h2 style={{ margin: 0 }}>Skills</h2>
+            <hr></hr>
+          </div>
         </Grid>
         <Grid container justify='center' alignItems='center' spacing={5}>
           {skill.map((item, i) => {

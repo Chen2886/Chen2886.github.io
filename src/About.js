@@ -51,12 +51,14 @@ export default function About() {
   return (
     <StyledAboutDiv id='about'>
       <Grid className='about-grid' container justify='center' alignItems='center' spacing={3}>
-        <Grid item xs={12}>
-          <h2 style={{ margin: 0 }}>Profile</h2>
-          <hr />
+        <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
+          <div style={{ display: 'inline-block' }}>
+            <h2 style={{ margin: 0 }}>About Me</h2>
+            <hr></hr>
+          </div>
         </Grid>
         <Grid item md={12} lg={6}>
-          <h3>About me</h3>
+          {/* <h3>About me</h3> */}
           <p>
             I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I
             specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS

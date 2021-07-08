@@ -51,6 +51,10 @@ const StyledProjectDiv = styled.div`
   background-color: rgb(35, 37, 39);
 `;
 
+const StyledTitleDiv = styled.div`
+  display: inline-block;
+`;
+
 const useStyles = makeStyles(({ palette }) => ({
   root: {
     borderRadius: '1rem',
@@ -153,7 +157,7 @@ const CustomCard = ({ styles, cover, title, brand, date }) => {
         <img className={styles.cover} src={cover} />
         <CardContent>
           {/* <Typography gutterBottom variant='h5' component='h2'> */}
-            {title}
+          {title}
           {/* </Typography> */}
           <Typography variant='body2' color='textSecondary' component='p'>
             {brand}
@@ -169,9 +173,11 @@ export default function Project() {
   return (
     <StyledProjectDiv id='portfolio'>
       <Grid className='portfolio-grid' container justify='center' alignItems='stretch'>
-        <Grid item xs={12}>
-          <h2 style={{ margin: 0 }}>Award Winning Projects</h2>
-          <hr></hr>
+        <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
+          <div style={{ display: 'inline-block' }}>
+            <h2 style={{ margin: 0 }}>Award Winning Projects</h2>
+            <hr></hr>
+          </div>
         </Grid>
         {WinningProjects.map((item, i) => {
           return (

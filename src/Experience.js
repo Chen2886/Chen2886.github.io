@@ -10,7 +10,7 @@ const StyledExperienceDiv = styled.div`
 
   padding: 25px 0px;
   height: 100%;
-  min-height: 65vh;
+  min-height: 85vh;
 
   background-color: rgb(35, 37, 39);
 `;
@@ -115,11 +115,11 @@ export default function Experience() {
   return (
     <StyledExperienceDiv id='experience'>
       <Grid className='experience-grid' container justify='center' alignItems='flex-start' spacing={3}>
-        <Grid item xs={12}>
-          {/* <StyledTitleDiv> */}
-          <h2 style={{ margin: 0 }}>Experience</h2>
-          <hr></hr>
-          {/* </StyledTitleDiv> */}
+        <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
+          <div style={{ display: 'inline-block' }}>
+            <h2 style={{ margin: 0 }}>Experience</h2>
+            <hr></hr>
+          </div>
         </Grid>
         <Grid item xs={12}>
           <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center', flexDirection: isMd ? 'column' : 'row' }}>

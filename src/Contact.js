@@ -141,9 +141,11 @@ export default function Contact() {
   return (
     <StyledContactDiv id='contact'>
       <Grid className='contact-grid' container justify='center' alignItems='stretch'>
-        <Grid item xs={12}>
-          <h2 style={{ margin: 0 }}>Contact me</h2>
-          <hr></hr>
+        <Grid item xs={12} style={{ marginBottom: '2rem', justifyContent: 'center', display: 'flex' }}>
+          <div style={{ display: 'inline-block' }}>
+            <h2 style={{ margin: 0 }}>Contact Me</h2>
+            <hr></hr>
+          </div>
         </Grid>
       </Grid>
     </StyledContactDiv>
