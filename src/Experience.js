@@ -10,7 +10,7 @@ const StyledExperienceDiv = styled.div`
 
   padding: 25px 0px;
   height: 100%;
-  min-height: 85vh;
+  min-height: 70vh;
 
   background-color: rgb(35, 37, 39);
 `;
