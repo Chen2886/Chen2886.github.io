@@ -78,7 +78,7 @@ export default function Skill() {
                     value={item.level}
                     styles={buildStyles({
                       strokeLinecap: 'butt',
-                      pathColor: '#fcdb81',
+                      pathColor: '#BFEFFF',
                     })}>
                     <ProgressBarDiv>
                       {item.name}
