@@ -181,7 +181,7 @@ export default function Project() {
         </Grid>
         {WinningProjects.map((item, i) => {
           return (
-            <Grid item key={i} md={4} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
+            <Grid item key={i} md={4} xl={3} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
               <CustomCard styles={styles1} brand={<p>{item.category}</p>} cover={'images/portfolio/' + item.image} title={<h3>{item.title}</h3>} />
             </Grid>
           );
