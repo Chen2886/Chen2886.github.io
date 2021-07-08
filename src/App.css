@@ -263,3 +263,30 @@ h3 {
     box-sizing: border-box;
   }
 }
+
+@media only screen and (min-width: 650px) {
+  #contact .contact-grid {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    vertical-align: middle;
+    padding: 50px 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  #contact .contact-grid {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    vertical-align: middle;
+    padding: 25px 25px;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}

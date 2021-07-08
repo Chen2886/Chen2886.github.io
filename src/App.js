@@ -5,6 +5,7 @@ import Experience from './Experience';
 import WinningProject from './WinningProjects';
 import Project from './Projects';
 import Skill from './Skills';
+import Contact from './Contact';
 import { faUser, faAddressCard, faEnvelope, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -30,6 +31,7 @@ function App() {
         <Skill />
         <WinningProject />
         <Project />
+        <Contact />
       </StyledContent>
     </div>
   );
