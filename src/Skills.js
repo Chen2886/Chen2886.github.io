@@ -33,7 +33,7 @@ const skill = [
   },
   {
     name: 'C',
-    level: '90',
+    level: '95',
   },
   {
     name: 'SQL',
@@ -41,7 +41,7 @@ const skill = [
   },
   {
     name: 'React Js',
-    level: '92',
+    level: '95',
   },
   {
     name: 'Python',
@@ -57,7 +57,7 @@ const skill = [
   },
   {
     name: 'JS',
-    level: '75',
+    level: '90',
   },
 ];
 

@@ -152,9 +152,9 @@ const CustomCard = ({ styles, cover, title, brand, date }) => {
       <CardActionArea className={styles.action}>
         <img className={styles.cover} src={cover} />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
+          {/* <Typography gutterBottom variant='h5' component='h2'> */}
             {title}
-          </Typography>
+          {/* </Typography> */}
           <Typography variant='body2' color='textSecondary' component='p'>
             {brand}
           </Typography>

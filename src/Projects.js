@@ -14,7 +14,7 @@ import { Row, Item } from '@mui-treasury/components/flex';
 const Projects = [
   {
     title: 'Personal Website',
-    category: 'My own website for showcasing.',
+    category: 'I designed this website for showcasing some projects and skills.',
     image: 'personalwebsite.jpg',
     url: 'https://chen2886.github.io',
   },
@@ -168,9 +168,9 @@ const CustomCard = ({ styles, cover, title, brand, date }) => {
       <CardActionArea className={styles.action}>
         <img className={styles.cover} src={cover} />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
+          {/* <Typography gutterBottom variant='h5' component='h2'> */}
             {title}
-          </Typography>
+          {/* </Typography> */}
           <Typography variant='body2' color='textSecondary' component='p'>
             {brand}
           </Typography>
@@ -183,16 +183,16 @@ const CustomCard = ({ styles, cover, title, brand, date }) => {
 export default function Project() {
   const styles1 = useStyles();
   return (
-    <StyledProjectDiv id='portfolio'>
+    <StyledProjectDiv id='second-portfolio'>
       <Grid className='portfolio-grid' container justify='center' alignItems='stretch'>
         <Grid item xs={12}>
-          <h2 style={{ margin: 0 }}>Projects</h2>
+          <h2 style={{ margin: 0 }}>Other Projects</h2>
           <hr></hr>
         </Grid>
         {Projects.map((item, i) => {
           return (
             <Grid item key={i} md={4} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
-              <CustomCard styles={styles1} brand={<p>{item.category}</p>} cover={'images/portfolio/' + item.image} title={<>{item.title}</>} />
+              <CustomCard styles={styles1} brand={<p>{item.category}</p>} cover={'images/portfolio/' + item.image} title={<h3>{item.title}</h3>} />
             </Grid>
           );
         })}

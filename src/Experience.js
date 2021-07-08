@@ -90,9 +90,6 @@ const CustomTab = withStyles((props) => ({
 }))((props) => <Tab disableRipple {...props} />);
 
 const CustomTabs = withStyles({
-  flexContainer: {
-    justifyContent: 'center',
-  },
   indicator: {
     display: 'flex',
     justifyContent: 'center',
@@ -104,7 +101,7 @@ const CustomTabs = withStyles({
       backgroundColor: '#635ee7',
     },
   },
-})((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
+})((props) => <Tabs centered {...props} TabIndicatorProps={{ children: <span /> }} />);
 
 export default function Experience() {
   const [activeTabId, setActiveTabId] = useState(0);
@@ -129,16 +126,17 @@ export default function Experience() {
             <CustomTabs
               variant={isMd ? 'scrollable' : 'standard'}
               orientation={isMd ? 'horizontal' : 'vertical'}
-              isMd={isMd}
               value={activeTabId}
+              scrollButtons='off'
+              fullWidth
               onChange={handleChange}>
-              {experience.map(function (item) {
-                return <CustomTab label={item.listTitle}></CustomTab>;
+              {experience.map(function (item, i) {
+                return <CustomTab label={item.listTitle} key={i}></CustomTab>;
               })}
             </CustomTabs>
-            <div style={{ width: isMd ? '100%' : '50%' }}>
+            <div style={{ width: isMd ? '100%' : '50%', marginTop: isMd ? '1rem' : '0' }}>
               {experience.map(function (item, i) {
-                return <TabPanel value={activeTabId} index={i} isMd={isMd} />;
+                return <TabPanel key={i} value={activeTabId} index={i} />;
               })}
             </div>
           </div>
