@@ -123,17 +123,19 @@ export default function Experience() {
         </Grid>
         <Grid item xs={12}>
           <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center', flexDirection: isMd ? 'column' : 'row' }}>
-            <CustomTabs
-              variant={isMd ? 'scrollable' : 'standard'}
-              orientation={isMd ? 'horizontal' : 'vertical'}
-              value={activeTabId}
-              scrollButtons='off'
-              fullWidth
-              onChange={handleChange}>
-              {experience.map(function (item, i) {
-                return <CustomTab label={item.listTitle} key={i}></CustomTab>;
-              })}
-            </CustomTabs>
+            <div style={{ display: 'flex' }}>
+              <CustomTabs
+                variant={isMd ? 'scrollable' : 'standard'}
+                orientation={isMd ? 'horizontal' : 'vertical'}
+                value={activeTabId}
+                scrollButtons='off'
+                fullWidth
+                onChange={handleChange}>
+                {experience.map(function (item, i) {
+                  return <CustomTab label={item.listTitle} key={i}></CustomTab>;
+                })}
+              </CustomTabs>
+            </div>
             <div style={{ width: isMd ? '100%' : '50%', marginTop: isMd ? '1rem' : '0' }}>
               {experience.map(function (item, i) {
                 return <TabPanel key={i} value={activeTabId} index={i} />;
