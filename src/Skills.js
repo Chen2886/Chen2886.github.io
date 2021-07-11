@@ -57,7 +57,7 @@ const skill = [
   },
   {
     name: 'JS',
-    level: '90',
+    level: '88',
   },
 ];
 

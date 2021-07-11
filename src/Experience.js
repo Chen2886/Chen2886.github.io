@@ -123,7 +123,7 @@ export default function Experience() {
         </Grid>
         <Grid item xs={12}>
           <div style={{ display: 'flex', flexGrow: '1', width: '100%', justifyContent: 'center', flexDirection: isMd ? 'column' : 'row' }}>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
               <CustomTabs
                 variant={isMd ? 'scrollable' : 'standard'}
                 orientation={isMd ? 'horizontal' : 'vertical'}
