@@ -123,6 +123,27 @@ hr {
   color: #11abb0;
 }
 
+#contact .social {
+  /* margin: 50px 24px; */
+  padding: 0;
+  font-size: 30px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#contact .social li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+
+#contact .social li a {
+  color: #fff;
+}
+
+#contact .social li a:hover {
+  color: #11abb0;
+}
+
 /* about section */
 
 @media only screen and (min-width: 650px) {

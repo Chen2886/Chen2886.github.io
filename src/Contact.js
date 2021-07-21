@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, makeStyles, Paper, TextField, withStyles } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledContactDiv = styled.div`
   -webkit-box-sizing: border-box;
@@ -13,6 +14,37 @@ const StyledContactDiv = styled.div`
 
   // background-color: rgb(35, 37, 39);
 `;
+
+const ContactDiv = styled.div`
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+
+  // background-color: rgb(35, 37, 39);
+`;
+
+const social = [
+  {
+    name: 'mail',
+    url: 'mailto: chen2886@purdue.edu',
+    icon: 'fas envelope',
+  },
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/tonychen47/',
+    icon: 'fab linkedin',
+  },
+  {
+    name: 'github',
+    url: 'http://github.com/Chen2886',
+    icon: 'fab github-square',
+  },
+];
 
 const CustomTextField = withStyles(() => ({
   root: {
@@ -52,19 +84,36 @@ export default function Contact() {
           </div>
         </Grid>
         <Grid item xs={12}>
-          <Paper style={{ background: 'rgb(35, 37, 39)' }}>
+          <Paper style={{ background: 'rgb(35, 37, 39)', borderRadius: '1rem' }} elevation={0}>
             <Grid container justify='center' alignItems='stretch' spacing={3}>
               <Grid item xs={12} md={6}>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <ContactDiv>
                   <h3>Send a Message</h3>
                   <CustomTextField label='Your Name'></CustomTextField>
                   <CustomTextField label='Your Email'></CustomTextField>
                   <CustomTextField label='Subject'></CustomTextField>
                   <CustomTextField multiline rows={4} label='Message'></CustomTextField>
-                </div>
+                </ContactDiv>
               </Grid>
               <Grid item xs={12} md={6}>
-                <h3>Let's Connect</h3>
+                <ContactDiv>
+                  <h3>Let's Connect</h3>
+                  <p>
+                    Feel free to send me an email or connect with my on LinkedIn! I would love to discuss job opporunities, project collobration or
+                    anything in general!
+                  </p>
+                  <ul className='social'>
+                    {social.map(function (network) {
+                      return (
+                        <li key={network.name}>
+                          <a href={network.url}>
+                            <FontAwesomeIcon icon={[network.icon.split(' ')[0], network.icon.split(' ')[1]]} />
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ContactDiv>
               </Grid>
             </Grid>
           </Paper>
