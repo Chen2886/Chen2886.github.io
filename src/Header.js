@@ -3,11 +3,8 @@ import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useScrollDirection from './UseScrollDirection';
 import styled, { css } from 'styled-components';
-import Particles from 'react-tsparticles';
-import backgroundJson from './background.json';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import NavMenu from './NavMenu';
-import zIndex from '@material-ui/core/styles/zIndex';
 
 const NavBar = styled.div`
   -webkit-box-sizing: border-box;
@@ -171,7 +168,7 @@ export default function Header() {
       {/* Header */}
       <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav>
-          <img style={{ height: '100%' }} src={'images/logo.png'}></img>
+          <img style={{ height: '100%' }} src={'images/logo.png'} alt='logo'></img>
           <Links>
             <ol>
               <li>
@@ -217,7 +214,7 @@ export default function Header() {
               {social.map(function (network) {
                 return (
                   <li key={network.name}>
-                    <a href={network.url} target='_blank'>
+                    <a href={network.url} target='_blank' rel='noreferrer'>
                       <FontAwesomeIcon icon={[network.icon.split(' ')[0], network.icon.split(' ')[1]]} />
                     </a>
                   </li>

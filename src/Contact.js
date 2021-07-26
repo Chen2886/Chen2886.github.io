@@ -106,7 +106,7 @@ export default function Contact() {
                     {social.map(function (network) {
                       return (
                         <li key={network.name}>
-                          <a href={network.url} target='_blank'>
+                          <a href={network.url} target='_blank' rel='noreferrer'>
                             <FontAwesomeIcon icon={[network.icon.split(' ')[0], network.icon.split(' ')[1]]} />
                           </a>
                         </li>

@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Card, Tab, Tabs, withStyles, CardContent, Grid, useTheme, CardMedia, CardActionArea, Typography } from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import cx from 'clsx';
+import { Card, CardContent, Grid, CardActionArea } from '@material-ui/core';
 import Color from 'color';
-import NoSsr from '@material-ui/core/NoSsr';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Box from '@material-ui/core/Box';
-import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
-import { Row, Item } from '@mui-treasury/components/flex';
 
 const WinningProjects = [
   {
@@ -49,10 +42,6 @@ const StyledProjectDiv = styled.div`
   min-height: 65vh;
 
   background-color: rgb(35, 37, 39);
-`;
-
-const StyledTitleDiv = styled.div`
-  display: inline-block;
 `;
 
 const useStyles = makeStyles(({ palette }) => ({
@@ -120,50 +109,31 @@ const useStyles = makeStyles(({ palette }) => ({
   },
 }));
 
-const CustomCard = ({ styles, cover, title, brand, date }) => {
-  const mediaStyles = useCoverCardMediaStyles();
+const CustomCard = ({ styles, cover, title, brand, url }) => {
   return (
-    // <Box className={cx(styles.root, styles.color)} pt={20}>
-    //   <CardMedia image={cover} className={styles.cover} classes={mediaStyles} />
-    //   <Box className={styles.content} p={2}>
-    //     <Box position={'relative'} zIndex={1}>
-    //       <Grid container justify='flex-end' spacing={2} style={{ marginTop: '3rem' }}>
-    //         <Grid item xs={12}>
-    //           <h2 className={styles.title}>{title}</h2>
-    //         </Grid>
-    //         <Grid item xs={12}>
-    //           <div style={{ wordWrap: 'break-word' }}>{brand}</div>
-    //         </Grid>
-    //       </Grid>
-
-    //       <Row p={0} gap={2}>
-    //         <Item position={'right'}>
-    //           <h2 className={styles.title}>{title}</h2>
-    //         </Item>
-    //       </Row>
-    //       <Row mt={4} alignItems={'center'}>
-    //         <Item>
-    //           <div className={styles.team}>a</div>
-    //         </Item>
-    //         <Item position={'right'}>
-    //           <div className={styles.date}>{date}</div>
-    //         </Item>
-    //       </Row>
-    //     </Box>
-    //   </Box>
-    // </Box>
     <Card className={styles.root}>
-      <CardActionArea className={styles.action}>
-        <img className={styles.cover} src={cover} />
-        <CardContent>
-          {/* <Typography gutterBottom variant='h5' component='h2'> */}
-          {title}
-          {/* </Typography> */}
-          <Typography variant='body2' color='textSecondary' component='p'>
-            {brand}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      {url && (
+        <CardActionArea href={url} target='_blank' className={styles.action}>
+          <img className={styles.cover} src={cover} alt={'image for ' + title} />
+          <CardContent>
+            <h3>{title}</h3>
+            <div>
+              <p>{brand}</p>
+            </div>
+          </CardContent>
+        </CardActionArea>
+      )}
+      {!url && (
+        <div className={styles.nonAction}>
+          <img className={styles.cover} src={cover} alt={'image for ' + title} />
+          <CardContent>
+            <h3>{title}</h3>
+            <div>
+              <p>{brand}</p>
+            </div>
+          </CardContent>
+        </div>
+      )}
     </Card>
   );
 };
@@ -182,7 +152,7 @@ export default function Project() {
         {WinningProjects.map((item, i) => {
           return (
             <Grid item key={i} md={4} xl={3} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
-              <CustomCard styles={styles1} brand={<p>{item.category}</p>} cover={'images/portfolio/' + item.image} title={<h3>{item.title}</h3>} />
+              <CustomCard url={item.url} styles={styles1} brand={item.category} cover={'images/portfolio/' + item.image} title={item.title} />
             </Grid>
           );
         })}

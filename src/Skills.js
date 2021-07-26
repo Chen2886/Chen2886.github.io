@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
-import { Card, Tab, Tabs, withStyles, CardContent, Grid, useTheme } from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Grid } from '@material-ui/core';
 
 const StyledSkillDiv = styled.div`
   -webkit-box-sizing: border-box;

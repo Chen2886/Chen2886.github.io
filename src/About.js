@@ -1,9 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Grid, Hidden, useTheme } from '@material-ui/core';
+import { Grid, Hidden } from '@material-ui/core';
 import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const RightColumnDiv = styled.div`
   width: 100%;
@@ -45,9 +44,6 @@ const StyledAboutDiv = styled.div`
 `;
 
 export default function About() {
-  const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.down('md'));
-
   return (
     <StyledAboutDiv id='about'>
       <Grid className='about-grid' container justify='center' alignItems='center' spacing={3}>

@@ -216,7 +216,6 @@ const Menu = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const buttonRef = useRef(null);
-  const navRef = useRef(null);
 
   const onResize = (e) => {
     if (e.currentTarget.innerWidth > 768) {
@@ -249,7 +248,7 @@ const Menu = () => {
 
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <Nav>
-            <img style={{ height: '100%' }} src={'images/logo.png'}></img>
+            <img style={{ height: '100%' }} src={'images/logo.png'} alt='logo'></img>
             <Links>
               <ol>
                 <li>

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, CardContent, Grid, CardActionArea, Typography } from '@material-ui/core';
+import { Card, CardContent, Grid, CardActionArea } from '@material-ui/core';
 import Color from 'color';
 import { makeStyles } from '@material-ui/core/styles';
-import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
 
 const Projects = [
   {
@@ -134,28 +133,27 @@ const useStyles = makeStyles(({ palette }) => ({
 }));
 
 const CustomCard = ({ styles, cover, title, brand, url }) => {
-  const mediaStyles = useCoverCardMediaStyles();
   return (
     <Card className={styles.root}>
       {url && (
         <CardActionArea href={url} target='_blank' className={styles.action}>
-          <img className={styles.cover} src={cover} />
+          <img className={styles.cover} src={cover} alt={'image for ' + title} />
           <CardContent>
-            {/* <Typography gutterBottom variant='h5' component='h2'> */}
-            {title}
-            {/* </Typography> */}
-            <Typography variant='body2' color='textSecondary' component='p'>
-              {brand}
-            </Typography>
+            <h3>{title}</h3>
+            <div>
+              <p>{brand}</p>
+            </div>
           </CardContent>
         </CardActionArea>
       )}
       {!url && (
         <div className={styles.nonAction}>
-          <img className={styles.cover} src={cover} />
+          <img className={styles.cover} src={cover} alt={'image for ' + title} />
           <CardContent>
-            {title}
-            <div>{brand}</div>
+            <h3>{title}</h3>
+            <div>
+              <p>{brand}</p>
+            </div>
           </CardContent>
         </div>
       )}
@@ -177,13 +175,7 @@ export default function Project() {
         {Projects.map((item, i) => {
           return (
             <Grid item key={i} md={4} xl={3} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
-              <CustomCard
-                url={item.url}
-                styles={styles1}
-                brand={<p>{item.category}</p>}
-                cover={'images/portfolio/' + item.image}
-                title={<h3>{item.title}</h3>}
-              />
+              <CustomCard url={item.url} styles={styles1} brand={item.category} cover={'images/portfolio/' + item.image} title={item.title} />
             </Grid>
           );
         })}
