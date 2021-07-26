@@ -63,14 +63,14 @@ export default function About() {
             specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS
             comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I
             also enjoy the problem solving aspect of programming and the ability to express my creativity. Here are some fun facts about me:
-            <StyledUl>
-              <li>In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!</li>
-              <li>I've passed the written exam for a private pilot license.</li>
-              <li>Skydiving and participating in professional karting are at the top of my bucket list.</li>
-              <li>My summer of 2019, I visited the White House and toured the press conference room!</li>
-              <li>My newest hobby is going to Topgolf!</li>
-            </StyledUl>
           </p>
+          <StyledUl>
+            <li>In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!</li>
+            <li>I've passed the written exam for a private pilot license.</li>
+            <li>Skydiving and participating in professional karting are at the top of my bucket list.</li>
+            <li>My summer of 2019, I visited the White House and toured the press conference room!</li>
+            <li>My newest hobby is going to Topgolf!</li>
+          </StyledUl>
 
           <br />
         </Grid>

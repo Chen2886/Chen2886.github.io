@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, makeStyles, Paper, TextField, withStyles } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Grid } from '@material-ui/core';
 
 const StyledFooterDiv = styled.div`
   -webkit-box-sizing: border-box;

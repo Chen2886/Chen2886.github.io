@@ -86,9 +86,6 @@ const CustomTab = withStyles((props) => ({
   },
   selected: {
     color: '#BFEFFF',
-  },
-  hover: {
-    color: '#ffffff',
   }
 }))((props) => <Tab disableRipple {...props} />);
 
@@ -104,7 +101,7 @@ const CustomTabs = withStyles({
       backgroundColor: '#635ee7',
     },
   },
-})((props) => <Tabs centered {...props} TabIndicatorProps={{ children: <span /> }} />);
+})((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
 
 export default function Experience() {
   const [activeTabId, setActiveTabId] = useState(0);
@@ -132,7 +129,6 @@ export default function Experience() {
                 orientation={isMd ? 'horizontal' : 'vertical'}
                 value={activeTabId}
                 scrollButtons='off'
-                fullWidth
                 onChange={handleChange}>
                 {experience.map(function (item, i) {
                   return <CustomTab label={item.listTitle} key={i}></CustomTab>;
