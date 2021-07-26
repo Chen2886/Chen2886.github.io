@@ -173,7 +173,7 @@ const CustomCard = ({ styles, cover, title, brand, url }) => {
     // </Box>
     <Card className={styles.root}>
       {url && (
-        <CardActionArea href={url} className={styles.action}>
+        <CardActionArea href={url} target='_blank' className={styles.action}>
           <img className={styles.cover} src={cover} />
           <CardContent>
             {/* <Typography gutterBottom variant='h5' component='h2'> */}
@@ -186,7 +186,7 @@ const CustomCard = ({ styles, cover, title, brand, url }) => {
         </CardActionArea>
       )}
       {!url && (
-        <div href={url} className={styles.nonAction}>
+        <div className={styles.nonAction}>
           <img className={styles.cover} src={cover} />
           <CardContent>
             {/* <Typography gutterBottom variant='h5' component='h2'> */}
