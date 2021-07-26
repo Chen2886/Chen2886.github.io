@@ -58,7 +58,7 @@ function TabPanel(props) {
         <h3 style={{ marginTop: '0', textAlign: 'left' }}>
           {experience[props.index].title} @ {experience[props.index].company}
         </h3>
-        <h4>{experience[props.index].years}</h4>
+        <p>{experience[props.index].years}</p>
         <p>{experience[props.index].description}</p>
       </CardContent>
     </CustomCard>
@@ -85,8 +85,11 @@ const CustomTab = withStyles((props) => ({
     },
   },
   selected: {
-    color: '#64ffda',
+    color: '#BFEFFF',
   },
+  hover: {
+    color: '#ffffff',
+  }
 }))((props) => <Tab disableRipple {...props} />);
 
 const CustomTabs = withStyles({

@@ -52,13 +52,13 @@ const CustomTextField = withStyles(() => ({
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
         borderRadius: 20,
-        borderColor: '#fff',
+        borderColor: '#eee',
       },
       '&:hover fieldset': {
-        borderColor: 'yellow',
+        borderColor: '#BFEFFF',
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'green',
+        borderColor: '#BFEFFF',
       },
     },
     '& .MuiOutlinedInput-input': {

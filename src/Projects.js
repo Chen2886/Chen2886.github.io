@@ -44,12 +44,12 @@ const Projects = [
   },
   {
     title: 'Shell',
-    category: 'I created my own shell. Private repository, so no link.',
+    category: 'I created my own shell using C++, C, Lex and Yacc.',
     image: 'bash.jpg',
   },
   {
     title: 'ANN',
-    category: 'I created an ANN network using tensorflow and basic algebra to recognize mnist_10 dataset.',
+    category: 'I created two ANNs to recognize mnist_10 dataset. One using tensorflow, the other one using basic algebra.',
     image: 'mnist.jpg',
     url: 'https://github.com/Chen2886/CS390-lab0',
   },
@@ -93,6 +93,13 @@ const useStyles = makeStyles(({ palette }) => ({
     justifyContent: 'flex-start',
     flexDirection: 'column',
   },
+  nonAction: {
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   content: {
     position: 'relative',
     zIndex: 1,
@@ -132,7 +139,7 @@ const useStyles = makeStyles(({ palette }) => ({
   },
 }));
 
-const CustomCard = ({ styles, cover, title, brand, date }) => {
+const CustomCard = ({ styles, cover, title, brand, url }) => {
   const mediaStyles = useCoverCardMediaStyles();
   return (
     // <Box className={cx(styles.root, styles.color)} pt={20}>
@@ -165,17 +172,32 @@ const CustomCard = ({ styles, cover, title, brand, date }) => {
     //   </Box>
     // </Box>
     <Card className={styles.root}>
-      <CardActionArea className={styles.action}>
-        <img className={styles.cover} src={cover} />
-        <CardContent>
-          {/* <Typography gutterBottom variant='h5' component='h2'> */}
-          {title}
-          {/* </Typography> */}
-          <Typography variant='body2' color='textSecondary' component='p'>
-            {brand}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      {url && (
+        <CardActionArea href={url} className={styles.action}>
+          <img className={styles.cover} src={cover} />
+          <CardContent>
+            {/* <Typography gutterBottom variant='h5' component='h2'> */}
+            {title}
+            {/* </Typography> */}
+            <Typography variant='body2' color='textSecondary' component='p'>
+              {brand}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      )}
+      {!url && (
+        <div href={url} className={styles.nonAction}>
+          <img className={styles.cover} src={cover} />
+          <CardContent>
+            {/* <Typography gutterBottom variant='h5' component='h2'> */}
+            {title}
+            {/* </Typography> */}
+            <Typography variant='body2' color='textSecondary' component='p'>
+              {brand}
+            </Typography>
+          </CardContent>
+        </div>
+      )}
     </Card>
   );
 };
@@ -194,7 +216,13 @@ export default function Project() {
         {Projects.map((item, i) => {
           return (
             <Grid item key={i} md={4} xl={3} style={{ padding: '1rem', boxShadow: 'border-box', display: 'inline-block' }}>
-              <CustomCard styles={styles1} brand={<p>{item.category}</p>} cover={'images/portfolio/' + item.image} title={<h3>{item.title}</h3>} />
+              <CustomCard
+                url={item.url}
+                styles={styles1}
+                brand={<p>{item.category}</p>}
+                cover={'images/portfolio/' + item.image}
+                title={<h3>{item.title}</h3>}
+              />
             </Grid>
           );
         })}

@@ -25,7 +25,7 @@ button:focus {
 
 p {
   line-height: 30px;
-  color: #eee;
+  color: #ddd;
 }
 
 h2 {
@@ -37,7 +37,7 @@ h2 {
 
 h3 {
   font-size: 25px;
-  /* color: #eee; */
+  /* color: #ddd; */
   /* color: #fcdb81; */
   /* color: #f4b705; */
   color: #BFEFFF;
@@ -186,11 +186,11 @@ hr {
 
 #about td {
   line-height: 30px;
-  color: #eee;
+  color: #ddd;
 }
 
 #about li {
-  color: #eee;
+  color: #ddd;
   line-height: 30px;
 }
 
@@ -223,11 +223,11 @@ hr {
 }
 
 #experience h4 {
-  color: #eee;
+  color: #ddd;
 }
 
 #experience h5 {
-  color: #eee;
+  color: #ddd;
   line-height: 20px;
 }
 
