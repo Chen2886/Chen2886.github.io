@@ -217,7 +217,7 @@ export default function Header() {
               {social.map(function (network) {
                 return (
                   <li key={network.name}>
-                    <a href={network.url}>
+                    <a href={network.url} target='_blank'>
                       <FontAwesomeIcon icon={[network.icon.split(' ')[0], network.icon.split(' ')[1]]} />
                     </a>
                   </li>
