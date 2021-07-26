@@ -249,8 +249,7 @@ const Menu = () => {
 
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <Nav>
-            {/* Pending Logo */}
-            <div>Logo Replacement</div>
+            <img style={{ height: '100%' }} src={'images/logo.png'}></img>
             <Links>
               <ol>
                 <li>

@@ -171,8 +171,7 @@ export default function Header() {
       {/* Header */}
       <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav>
-          {/* Pending Logo */}
-          <div>Logo Replacement</div>
+          <img style={{ height: '100%' }} src={'images/logo.png'}></img>
           <Links>
             <ol>
               <li>
