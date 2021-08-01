@@ -77,11 +77,20 @@ export default function Skill() {
                 <ProgressBarDiv>
                   <CircularProgressbarWithChildren
                     value={item.level}
+                    background
+                    backgroundPadding={6}
+                    strokeWidth={5}
                     styles={buildStyles({
+                      backgroundColor: '#bfefff',
+                      textColor: 'red',
+                      pathColor: 'rgb(35, 37, 39)',
+                      trailColor: 'transparent',
                       strokeLinecap: 'butt',
-                      pathColor: '#BFEFFF',
+                      // pathColor: '#BFEFFF',
+                      // trailColor: 'rgb(35, 37, 39)',
+                      // rotation: 0.5 + (1 - item.level / 100) / 2,
                     })}>
-                    <ProgressBarDiv>
+                    <ProgressBarDiv style={{ color: 'rgb(35, 37, 39)' }}>
                       {item.name}
                       <br />
                       {item.level}%
