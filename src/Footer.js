@@ -15,7 +15,7 @@ const StyledFooterDiv = styled.div`
 
 export default function Footer() {
   return (
-    <StyledFooterDiv id='footer'>
+    <StyledFooterDiv id='footer' name='footer'>
       <Grid className='footer-grid' container justify='center' alignItems='stretch'>
         <Grid item xs={12} style={{ justifyContent: 'center', display: 'flex' }}>
           {/* <div style={{ display: 'inline-block' }}> */}

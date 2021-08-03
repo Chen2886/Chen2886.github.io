@@ -75,7 +75,7 @@ const CustomTextField = withStyles(() => ({
 
 export default function Contact() {
   return (
-    <StyledContactDiv id='contact'>
+    <StyledContactDiv id='contact' name='contact'>
       <Grid className='contact-grid' container justify='center' alignItems='stretch'>
         <Grid item xs={12} style={{ marginBottom: '2rem', justifyContent: 'center', display: 'flex' }}>
           <div style={{ display: 'inline-block' }}>

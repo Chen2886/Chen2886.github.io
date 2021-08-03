@@ -164,7 +164,7 @@ const CustomCard = ({ styles, cover, title, brand, url }) => {
 export default function Project() {
   const styles1 = useStyles();
   return (
-    <StyledProjectDiv id='second-portfolio'>
+    <StyledProjectDiv id='second-portfolio' name='second-portfolio'>
       <Grid className='portfolio-grid' container justify='center' alignItems='stretch'>
         <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
           <div style={{ display: 'inline-block' }}>

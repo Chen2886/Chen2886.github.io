@@ -62,8 +62,8 @@ const skill = [
 
 export default function Skill() {
   return (
-    <StyledSkillDiv id='experience'>
-      <Grid className='experience-grid' container justify='center' alignItems='flex-start' spacing={3}>
+    <StyledSkillDiv id='skill' name='skill'>
+      <Grid className='skill-grid' container justify='center' alignItems='flex-start' spacing={3}>
         <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
           <div style={{ display: 'inline-block' }}>
             <h2 style={{ margin: 0 }}>Skills</h2>

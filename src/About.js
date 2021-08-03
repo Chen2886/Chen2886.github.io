@@ -45,7 +45,7 @@ const StyledAboutDiv = styled.div`
 
 export default function About() {
   return (
-    <StyledAboutDiv id='about'>
+    <StyledAboutDiv id='about' name='about'>
       <Grid className='about-grid' container justify='center' alignItems='center' spacing={3}>
         <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
           <div style={{ display: 'inline-block' }}>

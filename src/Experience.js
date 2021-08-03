@@ -113,7 +113,7 @@ export default function Experience() {
   };
 
   return (
-    <StyledExperienceDiv id='experience'>
+    <StyledExperienceDiv id='experience' name='experience'>
       <Grid className='experience-grid' container justify='center' alignItems='flex-start' spacing={3}>
         <Grid item xs={12} style={{ marginBottom: '1rem', justifyContent: 'center', display: 'flex' }}>
           <div style={{ display: 'inline-block' }}>

@@ -40,7 +40,7 @@ h3 {
   /* color: #ddd; */
   /* color: #fcdb81; */
   /* color: #f4b705; */
-  color: #BFEFFF;
+  color: #bfefff;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -147,13 +147,17 @@ hr {
 /* about section */
 
 @media only screen and (min-width: 650px) {
-  #about .about-grid {
+  #about .about-grid,
+  #experience .experience-grid,
+  #portfolio .portfolio-grid,
+  #second-portfolio .portfolio-grid,
+  #contact .contact-grid,
+  #skill .skill-grid {
     width: 90%;
     margin: auto;
     height: 100%;
     vertical-align: middle;
     padding: 50px 50px;
-    /* border: 1px solid white; */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -195,19 +199,6 @@ hr {
 }
 
 /* experience section */
-@media only screen and (min-width: 650px) {
-  #experience .experience-grid {
-    width: 90%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 50px 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
 @media only screen and (max-width: 950px) {
   #experience .experience-grid {
     width: 100%;
@@ -232,18 +223,6 @@ hr {
 }
 
 /* portfolio section */
-@media only screen and (min-width: 650px) {
-  #portfolio .portfolio-grid {
-    width: 90%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 50px 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
 
 @media only screen and (max-width: 950px) {
   #portfolio .portfolio-grid {
@@ -253,19 +232,6 @@ hr {
     vertical-align: middle;
     padding: 25px 25px;
     border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  #second-portfolio .portfolio-grid {
-    width: 90%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 50px 50px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -286,21 +252,9 @@ hr {
   }
 }
 
-@media only screen and (min-width: 650px) {
-  #contact .contact-grid {
-    width: 90%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 50px 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
 @media only screen and (max-width: 950px) {
-  #contact .contact-grid {
+  #contact .contact-grid,
+  #skill .skill-grid {
     width: 100%;
     margin: auto;
     height: 100%;
