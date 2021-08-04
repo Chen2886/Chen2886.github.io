@@ -165,7 +165,12 @@ hr {
 }
 
 @media only screen and (max-width: 950px) {
-  #about .about-grid {
+  #about .about-grid,
+  #experience .experience-grid,
+  #portfolio .portfolio-grid,
+  #second-portfolio .portfolio-grid,
+  #contact .contact-grid,
+  #skill .skill-grid {
     width: 100%;
     margin: auto;
     height: 100%;
@@ -198,21 +203,6 @@ hr {
   line-height: 30px;
 }
 
-/* experience section */
-@media only screen and (max-width: 950px) {
-  #experience .experience-grid {
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 25px 25px;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
 #experience h4 {
   color: #ddd;
 }
@@ -220,49 +210,4 @@ hr {
 #experience h5 {
   color: #ddd;
   line-height: 20px;
-}
-
-/* portfolio section */
-
-@media only screen and (max-width: 950px) {
-  #portfolio .portfolio-grid {
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 25px 25px;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  #second-portfolio .portfolio-grid {
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 25px 25px;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  #contact .contact-grid,
-  #skill .skill-grid {
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    vertical-align: middle;
-    padding: 25px 25px;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
 }
