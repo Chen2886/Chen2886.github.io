@@ -83,15 +83,27 @@ hr {
   text-align: center;
 }
 
-/* Hi line */
-#home .banner-text h1 {
-  font-size: 90px;
-  /* color: #fff; */
-  color: #fcdb81;
-  margin: 0 auto 18px auto;
-  letter-spacing: 1px;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+@media only screen and (min-width: 650px) {
+  #home .banner-text h1 {
+    font-size: 90px;
+    color: #fcdb81;
+    margin: 0 auto 18px auto;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+  }
 }
+
+@media only screen and (max-width: 950px) {
+  #home .banner-text h1 {
+    font-size: 50px;
+    color: #fcdb81;
+    margin: 0 auto 18px auto;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Hi line */
 
 /* typing */
 #home .banner-text h3 {
