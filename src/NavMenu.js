@@ -122,35 +122,6 @@ const StyledSidebar = styled.aside`
     color: #a8b2d1;
     text-align: center;
   }
-
-  ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    width: 100%;
-
-    li {
-      position: relative;
-      margin: 0 auto 20px;
-      font-size: clamp(14px, 4vw, 18px);
-
-      @media (max-width: 600px) {
-        margin: 0 auto 10px;
-      }
-
-      &:before {
-        display: block;
-        margin-bottom: 5px;
-        color: #64ffda;
-        font-size: 14px;
-      }
-    }
-
-    a {
-      width: 100%;
-      padding: 3px 20px 20px;
-    }
-  }
 `;
 
 const Nav = styled.nav`
@@ -208,6 +179,7 @@ const StyledResumeButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 `;
 
 const Menu = () => {
@@ -248,7 +220,7 @@ const Menu = () => {
 
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <Nav>
-            <img style={{ height: '100%' }} src={'images/logo.png'} alt='logo'></img>
+            <img style={{ height: '100%', maxHeight: '100px' }} src={'images/logo.png'} alt='logo'></img>
             <Links>
               <ol>
                 <li>
