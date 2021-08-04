@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Color from 'color';
 import { Card, Tab, Tabs, withStyles, CardContent, Grid, useTheme } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { color } from '@material-ui/system';
+import { white } from 'color-name';
 
 const StyledExperienceDiv = styled.div`
   -webkit-box-sizing: border-box;
@@ -22,7 +25,7 @@ const experience = [
     title: 'Software Engineer Intern ',
     years: 'June 2020 - December 2020',
     description:
-      'I worked within a team to develop several projects during my 6 months at the company. I thoroughly enjoyed the experience because it allowed me to apply my skills to real-life situations. One of the project I developed was used to combat COVID-19. The project received great feedback and is actively being used. Another side project I worked on required me to integrate two platforms within the company, and this project allowed me to get first-hand experience on an integration problem.',
+      'I worked within a team to develop several projects during my 6 months at the company. I thoroughly enjoyed the experience because it allowed me to apply my skills to real-life situations. One of the project I developed was used to combat COVID-19, which received great feedback and is actively being used. Another side project I worked on required me to integrate two platforms within the company, and this project allowed me to get first-hand experience on an integration problem.',
   },
   {
     listTitle: 'Purdue University - Researcher',
@@ -30,7 +33,7 @@ const experience = [
     title: 'Undergraduate Researcher ',
     years: 'April 2020 - Current',
     description:
-      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that performs LibEFP calculation for chemists. This is a unique experience because once iSpiEFP is finished, the entire chemistry community can benefit from this. Most of the chemists are unfamiliar with terminals, which is where LibEFP calculation is traditionally performed. Upon completing this project, numerous chemists will be able to use this robust calculation, which will save their time compared to their standard method.',
+      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program, iSpiEFP, that performs LibEFP calculation for chemists. This is a unique experience because once iSpiEFP is finished, the entire chemistry community can benefit from this. Most of the chemists are unfamiliar with terminals, which is where LibEFP calculation is traditionally performed. Upon completing this project, numerous chemists will be able to use this robust calculation, which will save their time compared to their standard method.',
   },
   {
     listTitle: 'Purdue University - TA',
@@ -68,11 +71,27 @@ function TabPanel(props) {
 const CustomTab = withStyles((props) => ({
   root: {
     textTransform: 'none',
-    color: '#fff',
+    color: '#BFEFFF',
     alignItems: 'center',
     fontSize: '15px',
     '&:focus': {
       opacity: 1,
+    },
+    '&:hover': {
+      '&:not($selected)': {
+        color: '#bfefff',
+        backgroundColor: Color('#bfefff').fade(0.87).toString(),
+      },
+      '&:($selected)': {
+        color: 'black',
+        backgroundColor: 'black',
+      },
+      // '&::before': {
+      //   opacity: 0,
+      // },
+      // '& + $root:before': {
+      //   opacity: 0,
+      // },
     },
   },
   wrapper: {
@@ -86,7 +105,14 @@ const CustomTab = withStyles((props) => ({
   },
   selected: {
     color: '#BFEFFF',
-  }
+    backgroundColor: Color('#bfefff').fade(0.87).toString(),
+    '& + $root': {
+      zIndex: 1,
+    },
+    '& + $root:before': {
+      opacity: 0,
+    },
+  },
 }))((props) => <Tab disableRipple {...props} />);
 
 const CustomTabs = withStyles({
@@ -98,7 +124,7 @@ const CustomTabs = withStyles({
     '& > span': {
       maxWidth: 40,
       width: '100%',
-      backgroundColor: '#635ee7',
+      backgroundColor: 'grey',
     },
   },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);

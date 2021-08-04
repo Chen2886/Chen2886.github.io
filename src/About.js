@@ -55,10 +55,11 @@ export default function About() {
         </Grid>
         <Grid item md={12} lg={6}>
           <p>
-            I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I
-            specialize in front-end and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS
-            comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I
-            also enjoy the problem solving aspect of programming and the ability to express my creativity. Here are some fun facts about me:
+            I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I am
+            especially interested in web and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My
+            passion for CS comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact
+            on the world. I also enjoy the problem solving aspect of programming and the ability to express my creativity. Here are some fun facts
+            about me:
           </p>
           <StyledUl>
             <li>In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!</li>

@@ -16,10 +16,10 @@ a {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-a:hover,
-a:focus,
-button:hover,
-button:focus {
+#nav a:hover,
+#nav a:focus,
+#nav button:hover,
+#nav button:focus {
   color: #64ffda;
 }
 
