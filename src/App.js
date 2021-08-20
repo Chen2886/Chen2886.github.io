@@ -13,6 +13,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 import Particles from 'react-tsparticles';
 import backgroundJson from './background.json';
+import { init } from 'emailjs-com';
 
 function App() {
   const StyledContent = styled.div`
@@ -22,6 +23,8 @@ function App() {
   `;
 
   library.add(fab, faUser, faAddressCard, faEnvelope, faPhoneSquare);
+  init('user_UJdsRqUdPt6gVajZYAFwN');
+
   return (
     <div className='App'>
       <Particles options={backgroundJson} style={{ zIndex: -1 }} />

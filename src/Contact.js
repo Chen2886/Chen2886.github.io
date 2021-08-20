@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Grid, Paper, TextField, withStyles } from '@material-ui/core';
+import emailjs from 'emailjs-com';
+import { Grid, Paper, TextField, withStyles, Button, Divider } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledContactDiv = styled.div`
@@ -73,7 +74,86 @@ const CustomTextField = withStyles(() => ({
   },
 }))((props) => <TextField {...props} variant='outlined' />);
 
+const CustomButton = withStyles(() => ({
+  root: {
+    boxShadow: 'none',
+    margin: '1rem',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '0 0 1px 0 solid',
+    lineHeight: 1.5,
+    borderColor: 'white',
+    color: 'white',
+    borderRadius: 20,
+    '&:hover': {
+      borderColor: '#BFEFFF',
+      boxShadow: 'none',
+    },
+  },
+}))((props) => <Button {...props} disableRipple variant='outlined' color='primary' />);
+
 export default function Contact() {
+  const [formName, setName] = useState('');
+  const [formEmail, setEmail] = useState('');
+  const [formSubject, setSubject] = useState('');
+  const [formMessage, setMessage] = useState('');
+
+  const sendEmail = (template) => {
+    // console.log(template);
+    emailjs
+      .send('service_qd7f7li', 'template_l76p0ih', template, 'user_UJdsRqUdPt6gVajZYAFwN')
+      .then((res) => {
+        if (res.status === 200) {
+          alert('Your message has been sent, thank you!');
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+        }
+      })
+      // Handle errors here however you like
+      .catch((err) => {
+        alert('Failed to send. Someone probably spamed my email, sorry for the inconvenience. Please see my email on the right.');
+        console.error('Failed to send feedback. Error: ', err);
+      });
+  };
+
+  var handleChange = (e) => {
+    if (e.target.id === 'contactName') setName(e.target.value);
+    else if (e.target.id === 'contactEmail') setEmail(e.target.value);
+    else if (e.target.id === 'contactSubject') setSubject(e.target.value);
+    else if (e.target.id === 'contactMessage') setMessage(e.target.value);
+  };
+
+  var submitClicked = () => {
+    if (formName.length === 0) {
+      alert('Name is required.');
+      return;
+    }
+    if (formEmail.length === 0) {
+      alert('Email is required.');
+      return;
+    }
+    if (/\S+@\S+\.\S+/.test(formEmail) === false) {
+      alert('Email is invalid.');
+      return;
+    }
+    if (formMessage.length === 0) {
+      alert('Message is required.');
+      return;
+    }
+
+    let templateParams = {
+      name: formName,
+      email: formEmail,
+      subject: formSubject,
+      message: formMessage,
+    };
+
+    sendEmail(templateParams);
+  };
+
   return (
     <StyledContactDiv id='contact' name='contact'>
       <Grid className='contact-grid' container justify='center' alignItems='stretch'>
@@ -89,10 +169,13 @@ export default function Contact() {
               <Grid item xs={12} md={6}>
                 <ContactDiv>
                   <h3>Send a Message</h3>
-                  <CustomTextField label='Your Name'></CustomTextField>
-                  <CustomTextField label='Your Email'></CustomTextField>
-                  <CustomTextField label='Subject'></CustomTextField>
-                  <CustomTextField multiline rows={4} label='Message'></CustomTextField>
+                  <CustomTextField label='Your Name' id='contactName' value={formName} onChange={handleChange}></CustomTextField>
+                  <CustomTextField label='Your Email' id='contactEmail' value={formEmail} onChange={handleChange}></CustomTextField>
+                  <CustomTextField label='Subject' id='contactSubject' value={formSubject} onChange={handleChange}></CustomTextField>
+                  <CustomTextField multiline rows={4} label='Message' id='contactMessage' value={formMessage} onChange={handleChange}></CustomTextField>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <CustomButton onClick={submitClicked}>Send</CustomButton>
+                  </div>
                 </ContactDiv>
               </Grid>
               <Grid item xs={12} md={6}>
