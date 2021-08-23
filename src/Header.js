@@ -168,7 +168,7 @@ export default function Header() {
       {/* Header */}
       <NavBar scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
         <Nav id='nav' name='nav'>
-          <img style={{ height: '100%' }} src={'images/logo.png'} alt='logo'></img>
+          <img style={{ height: '50%', padding: '1rem' }} src={'images/logo.png'} alt='logo'></img>
           <Links>
             <ol>
               <li>

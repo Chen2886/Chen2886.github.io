@@ -220,7 +220,7 @@ const Menu = () => {
 
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <Nav>
-            <img style={{ height: '100%', maxHeight: '100px' }} src={'images/logo.png'} alt='logo'></img>
+            <img style={{ height: '50%', maxHeight: '75px', padding: '1rem' }} src={'images/logo.png'} alt='logo'></img>
             <Links>
               <ol>
                 <li>
