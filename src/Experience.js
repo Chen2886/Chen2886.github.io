@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Color from 'color';
 import { Card, Tab, Tabs, withStyles, CardContent, Grid, useTheme } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { color } from '@material-ui/system';
-import { white } from 'color-name';
 
 const StyledExperienceDiv = styled.div`
   -webkit-box-sizing: border-box;

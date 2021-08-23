@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
-import { Grid, Paper, TextField, withStyles, Button, Divider } from '@material-ui/core';
+import { Grid, Paper, TextField, withStyles, Button } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledContactDiv = styled.div`
