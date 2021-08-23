@@ -1,0 +1,194 @@
+{
+  "main": {
+    "name": "Tony Chen",
+    "occupation": "Student",
+    "description": "Here will be your description. Use this to describe what you do or whatever you feel best describes yourself to a potential employer",
+    "image": "profilepic.jpg",
+    "bio": "I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I specialize in front-end, mobile and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I also enjoy the problem solving aspect of programming and the ability to express your creativity. In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!",
+    "contactmessage": "Send me a message!",
+    "email": "chen2886@purdue.edu",
+    "phone": "352-274-1888",
+    "address": {
+      "street": "1250 1st Street, Room 190",
+      "city": "West Lafayette",
+      "state": "IN",
+      "zip": "47906"
+    },
+    "website": "https://chen2886.github.io",
+    "social": [
+      {
+        "name": "mail",
+        "url": "mailto: chen2886@purdue.edu",
+        "className": "fas envelope"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/tonychen47/",
+        "className": "fab linkedin"
+      },
+      {
+        "name": "github",
+        "url": "http://github.com/Chen2886",
+        "className": "fab github-square"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My track for Computer Science is Software Engineering, and I specialize in front-end development.",
+    "education": [
+      {
+        "school": "Purdue University",
+        "degree": "Bachelor of Science in Computer Science",
+        "graduated": "May 2022"
+      }
+    ],
+    "work": [
+      {
+        "company": "Zotec Partners",
+        "title": "Software Engineer Intern ",
+        "years": "June 2020 - December 2020",
+        "description": "I worked within a team to develop several projects during my 6 months at the company. I thoroughly enjoyed the experience because it allowed me to apply my skills to real-life situations. One of the project I developed was used to combat COVID-19. The project received great feedback and is actively being used. Another side project I worked on required me to integrate two platforms within the company, and this project allowed me to get first-hand experience on an integration problem."
+      },
+      {
+        "company": "Purdue University",
+        "title": "Undergraduate Researcher ",
+        "years": "April 2020 - Current",
+        "description": "I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that performs LibEFP calculation for chemists. This is a unique experience because once iSpiEFP is finished, the entire chemistry community can benefit from this. Most of the chemists are unfamiliar with terminals, which is where LibEFP calculation is traditionally performed. Upon completing this project, numerous chemists will be able to use this robust calculation, which will save their time compared to their standard method."
+      },
+      {
+        "company": "Purdue University",
+        "title": "Teaching Assistant ",
+        "years": "August 2019 - Current",
+        "description": "I have been a Teaching Assistant since my sophomore year. It is my favorite time and always the highlight of my week. I was a TA for 2 semesters for CS 240 (Programming in C) and have been a TA for CS 251 (Data Structures and Algorithms) since then. I led two labs each week to help students further their understanding by practicing what they learned in class or explain concepts in more detail for students who struggled in class. I also hold office hours which allows more one-on-one interaction with students who need guidance on homework and projects."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Java",
+        "level": "85%"
+      },
+      {
+        "name": "C",
+        "level": "90%"
+      },
+      {
+        "name": "SQL",
+        "level": "80%"
+      },
+      {
+        "name": "React Js",
+        "level": "87%"
+      },
+      {
+        "name": "Python",
+        "level": "83%"
+      },
+      {
+        "name": "Swift",
+        "level": "77%"
+      },
+      {
+        "name": "C++",
+        "level": "55%"
+      },
+      {
+        "name": "Git",
+        "level": "65%"
+      },
+      {
+        "name": "Angular Js",
+        "level": "60%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "75%"
+      },
+      {
+        "name": ".NET Core",
+        "level": "50%"
+      }
+    ]
+  },
+  "portfolio": {
+    "winningprojects": [
+      {
+        "title": "Composem",
+        "category": "PickHacks 2021 1st place winner, and best fun hack. Composem provides an innovative cloud storage solution to turn a simplistic, accessible markdown syntax into sheet music.",
+        "image": "composem.jpg",
+        "url": "https://devpost.com/software/composem"
+      },
+      {
+        "title": "C-City",
+        "category": "BoilerMake 8 Winning Project. Web App my team built to recommend where people to move.",
+        "image": "ccity.jpg",
+        "url": "https://devpost.com/software/c-city"
+      },
+      {
+        "title": "StarStats",
+        "category": "Codepath Design Winning Project. An iOS app that display BrawlStar's user statistics.",
+        "image": "starstats.jpg",
+        "url": "https://github.com/BrawlStats-Purdue/BrawlStats"
+      },
+      {
+        "title": "No One Eats Alone",
+        "category": "HelloWorld2k18 Winning Project. An iOS app that helps students plan events. This was my my first stab at iOS development and Hackathon!",
+        "image": "ios.jpg"
+      }
+    ],
+    "projects": [
+      {
+        "title": "Personal Website",
+        "category": "My own website for showcasing.",
+        "image": "personalwebsite.jpg",
+        "url": "https://chen2886.github.io"
+      },
+      {
+        "title": "Ez-Prez: Presentation Generator",
+        "category": "BoilerMake 7 Project. iOS and Web app that converts text to a presentation using ML.",
+        "image": "ezprez.jpg",
+        "url": "https://devpost.com/software/ez-prez"
+      },
+      {
+        "title": "Business Management",
+        "category": "A JavaFX with Sqlite3 application that track's a company's inventory.",
+        "image": "businessmanage.jpg",
+        "url": "https://github.com/Chen2886/Business-Management"
+      },
+      {
+        "title": "Circle",
+        "category": "A social media platform. The demo link works but it's a little slow, since it has to boot up.",
+        "image": "circle.jpg",
+        "url": "https://github.com/Chen2886/Circle-Front"
+      },
+      {
+        "title": "Flix",
+        "category": "An iOS app that displays the top movies from IMDB.",
+        "image": "ios.jpg",
+        "url": "https://github.com/Chen2886/Flix"
+      },
+      {
+        "title": "Shell",
+        "category": "I created my own shell. Private repository, so no link.",
+        "image": "bash.jpg"
+      },
+      {
+        "title": "ANN",
+        "category": "I created an ANN network using tensorflow and basic algebra to recognize mnist_10 dataset.",
+        "image": "mnist.jpg",
+        "url": "https://github.com/Chen2886/CS390-lab0"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
+        "user": "Kareem Abdul Jabbar"
+      },
+      {
+        "text": "That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
+        "user": "Steve Wozniak... impersonator"
+      }
+    ]
+  }
+}
