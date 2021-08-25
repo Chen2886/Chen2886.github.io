@@ -182,7 +182,7 @@ export default function Contact() {
                 <ContactDiv>
                   <h3>Let's Connect</h3>
                   <p>
-                    Feel free to send me an email or connect with my on LinkedIn! I would love to discuss job opporunities, project collobration or
+                    Feel free to send me an email or connect with me on LinkedIn! I would love to discuss job opporunities, project collobration or
                     anything in general!
                   </p>
                   <ul className='social'>

@@ -23,7 +23,7 @@ const experience = [
     title: 'Software Engineer Intern ',
     years: 'June 2020 - December 2020',
     description:
-      'I worked within a team to develop several projects during my 6 months at the company. I thoroughly enjoyed the experience because it allowed me to apply my skills to real-life situations. One of the project I developed was used to combat COVID-19, which received great feedback and is actively being used. Another side project I worked on required me to integrate two platforms within the company, and this project allowed me to get first-hand experience on an integration problem.',
+      'I worked within a team to develop several projects during my 6 months at the company. I thoroughly enjoyed the experience because it allowed me to apply my skills to real-life situations. One of the projects I developed was used to combat COVID-19, which received great feedback and is actively being used. Another side project I worked on required me to integrate two platforms within the company. This project allowed me to get the first-hand experience on an integration problem.',
   },
   {
     listTitle: 'Purdue University - Researcher',
@@ -31,7 +31,7 @@ const experience = [
     title: 'Undergraduate Researcher ',
     years: 'April 2020 - Current',
     description:
-      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that performs LibEFP calculations for chemists. This is a unique experience because once iSpiEFP is finished, the entire chemistry community can benefit from this. Most of the chemists are unfamiliar with terminals, which is where LibEFP calculation is traditionally performed. Upon completing this project, numerous chemists will be able to use this robust calculation, which will save them time compared to the traditional method.',
+      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that helps chemists perform EFP calculations. This is a unique experience because once iSpiEFP is finished, the entire scientific community can benefit from this. This program significantly lowers the barrier for scientists to use the EFP calculation. Most of the scientists are unfamiliar with terminals, which is where EFP calculation is traditionally performed. Upon completing this project, numerous scientists will be able to use this robust calculation, saving them time compared to the traditional method.',
   },
   {
     listTitle: 'Purdue University - TA',
@@ -39,7 +39,7 @@ const experience = [
     title: 'Teaching Assistant ',
     years: 'August 2019 - Current',
     description:
-      'I have been an Undergraduate Teaching Assistant since my sophomore year for CS 240 (Programming in C) and CS 251 (Data Structures and Algorithms). I lead two labs each week to help students further their understanding of the course material by practicing what they learned or explaining concepts in more detail. I also hold office hours which allows for more one-on-one interaction with students who need more guidance on homework and projects. Working as a TA is always the highlight of my week.',
+      'Since my sophomore year, I have been an Undergraduate Teaching Assistant for CS 240 (Programming in C) and CS 251 (Data Structures and Algorithms). I lead two labs each week to help students further understand the course material by practicing what they learned or explaining concepts in more detail. I also hold office hours which allows for more one-on-one interaction with students who need more guidance on homework and projects. Working as a TA is always the highlight of my week.',
   },
 ];
 
