@@ -7,42 +7,47 @@ import { makeStyles } from '@material-ui/core/styles';
 const Projects = [
   {
     title: 'Personal Website',
-    category: 'I designed this website for showcasing some projects and skills.',
+    category: 'I designed this website to showcase my resume. Instead of using a template, I decided to build one from scratch using React.',
     image: 'personalwebsite.jpg',
     url: 'https://chen2886.github.io',
   },
   {
     title: 'Ez-Prez: Presentation Generator',
-    category: 'BoilerMake 7 Project. iOS and Web app that converts text to a presentation using ML.',
+    category:
+      'My friends and I build this project for a hackathon, BoilerMake 7. We created an iOS and Web app that converts text or voice to a google slide using ML. This was a unique project with an incredible result!',
     image: 'ezprez.jpg',
     url: 'https://devpost.com/software/ez-prez',
   },
   {
     title: 'Business Management',
-    category: "A JavaFX with Sqlite3 application that track's a company's inventory.",
+    category:
+      "I created an application utilizing JavaFx and SQLite3 that track's a company's inventory, formula, and finances. The company was able to see a 25% efficiency increase.",
     image: 'businessmanage.jpg',
     url: 'https://github.com/Chen2886/Business-Management',
   },
   {
     title: 'Circle',
-    category: "A social media platform. The demo link works but it's a little slow, since it has to boot up.",
+    category:
+      'This is a social media platform that my group created for a semester project. We used concepts from Reddit and added some of our twists to it! (The demo link works, but it takes a while to boot up.)',
     image: 'circle.jpg',
     url: 'https://github.com/Chen2886/Circle-Front',
   },
   {
     title: 'Flix',
-    category: 'An iOS app that displays the top movies from IMDB.',
+    category:
+      'This is one of the first iOS apps that I created. The app displays the top movies from IMDB. My main focus for this app is to learn REST API calls using Swift and constraints. (this apps looks excellent all on all devices and orientation)',
     image: 'ios.jpg',
     url: 'https://github.com/Chen2886/Flix',
   },
   {
     title: 'Shell',
-    category: 'I created my own shell using C++, C, Lex and Yacc.',
+    category:
+      'I created my own bash shell using C++, C, Lex, and Yacc. This was a challenging project since there are a lot of intricate parts to a shell.',
     image: 'bash.jpg',
   },
   {
     title: 'ANN',
-    category: 'I created two ANNs to recognize mnist_10 dataset. One using tensorflow, the other one using basic algebra.',
+    category: 'I created two ANNs to recognize mnist_10 dataset: one using TensorFlow, the other one using basic algebra.',
     image: 'mnist.jpg',
     url: 'https://github.com/Chen2886/CS390-lab0',
   },

@@ -31,7 +31,7 @@ const experience = [
     title: 'Undergraduate Researcher ',
     years: 'April 2020 - Current',
     description:
-      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that helps chemists perform EFP calculations. This is a unique experience because once iSpiEFP is finished, the entire scientific community can benefit from this. This program significantly lowers the barrier for scientists to use the EFP calculation. Most of the scientists are unfamiliar with terminals, which is where EFP calculation is traditionally performed. Upon completing this project, numerous scientists will be able to use this robust calculation, saving them time compared to the traditional method.',
+      'I worked with the Slipchenko Lab Group at Purdue University to develop a user-friendly program -- iSpiEFP -- that helps chemists perform EFP calculations. This is an unique experience because once iSpiEFP is finished, the entire scientific community can benefit from this. This program significantly lowers the barrier for scientists to use the EFP calculation. Most of the scientists are unfamiliar with terminals, which is where EFP calculation is traditionally performed. Upon completing this project, numerous scientists will be able to use this robust calculation, saving them time compared to the traditional method.',
   },
   {
     listTitle: 'Purdue University - TA',
