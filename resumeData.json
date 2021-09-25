@@ -6,19 +6,19 @@
     "image": "profilepic.jpg",
     "bio": "I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I specialize in front-end, mobile and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My passion for CS comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact on the world. I also enjoy the problem solving aspect of programming and the ability to express your creativity. In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends and make tiramisu!",
     "contactmessage": "Send me a message!",
-    "email": "chen2886@purdue.edu",
+    "email": "hello@tonychen.me",
     "phone": "352-274-1888",
     "address": {
-      "street": "1250 1st Street, Room 190",
+      "street": "430 Wood St",
       "city": "West Lafayette",
       "state": "IN",
       "zip": "47906"
     },
-    "website": "https://chen2886.github.io",
+    "website": "https://tonychen.me",
     "social": [
       {
         "name": "mail",
-        "url": "mailto: chen2886@purdue.edu",
+        "url": "mailto: hello@tonychen.me",
         "className": "fas envelope"
       },
       {
