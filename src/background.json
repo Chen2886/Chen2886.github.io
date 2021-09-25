@@ -14,10 +14,6 @@
   "interactivity": {
     "detect_on": "window",
     "events": {
-      "onClick": {
-        "enable": true,
-        "mode": "repulse"
-      },
       "onHover": {
         "enable": true,
         "mode": "bubble"
