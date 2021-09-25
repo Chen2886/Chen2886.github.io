@@ -95,7 +95,7 @@ export default function About() {
                         <FontAwesomeIcon icon='envelope' />
                       </td>
                       <td>&nbsp;&nbsp;</td>
-                      <td>chen2886@purdue.edu</td>
+                      <td>hello@tonychen.me</td>
                     </tr>
 
                     <tr>

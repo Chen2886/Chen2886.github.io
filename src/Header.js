@@ -116,7 +116,7 @@ const StyledResumeButton = styled.a`
 const social = [
   {
     name: 'mail',
-    url: 'mailto: chen2886@purdue.edu',
+    url: 'mailto: hello@tonychen.me',
     icon: 'fas envelope',
   },
   {
