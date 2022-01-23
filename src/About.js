@@ -110,9 +110,7 @@ export default function About() {
                       </td>
                       <td>&nbsp;&nbsp;</td>
                       <td>
-                        430 Wood St
-                        <br />
-                        West Lafayette, IN, 47906
+                        West Lafayette, IN 47906
                       </td>
                     </tr>
                   </tbody>
