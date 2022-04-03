@@ -42,7 +42,7 @@ const social = [
   },
   {
     name: 'github',
-    url: 'http://github.com/Chen2886',
+    url: 'http://github.com/tonynchen',
     icon: 'fab github-square',
   },
 ];
